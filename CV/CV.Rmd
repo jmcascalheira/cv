@@ -1,0 +1,463 @@
+---
+name: João Cascalheira
+date: "`r format(Sys.time(), '%B %Y')`"
+qualifications: Ph.D.
+position: "Assistant Researcher"
+address: "ICArEHB, University of Algarve, Campus de Gambelas, 8005-139 Faro, Portugal"
+phone: +351 912 468 699
+www: www.icarehb.com/team/cascalheira
+email: "jmcascalheira@ualg.pt"
+twitter: joaocascalheira
+headcolor: "3f51b5"
+github: jmcascalheira
+output: vitae::awesomecv
+docname: Curriculum Vitae
+---
+  
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+library(vitae)
+library(tidyverse)
+library(scholar)
+library(bibliometrix)
+library(gridExtra)
+
+peer_artic <- bibliography_entries("CV.bib") %>%
+  filter(bibtype == "Article" & !is.na(doi)) %>% 
+  arrange(!is.na(date), desc(date))
+
+n_artic <- bibliography_entries("CV.bib") %>% 
+  filter(!bibtype %in% c("Book", "Unpublished", "Collection") & is.na(doi)) %>%
+  arrange(!is.na(date), desc(date))
+
+total_artic <- bibliography_entries("CV.bib") %>% 
+  filter(!bibtype %in% c("Book", "Unpublished", "Collection", "Thesis"))
+
+oral <- bibliography_entries("CV.bib") %>% 
+  filter(bibtype == "Unpublished" & shorttitle == "Talk") %>% 
+  arrange(!is.na(date), desc(date))
+
+poster <- bibliography_entries("CV.bib") %>% 
+  filter(bibtype == "Unpublished" & shorttitle == "Poster") %>% 
+  arrange(!is.na(date), desc(date))
+
+```
+
+# Summary
+
+I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct three field projects, I am co-responsible for a project investigating the origins and evolution of modern human cognition in southwestern Iberia, and a colaborator in different projects in Mozambique. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences.
+
+
+# Education
+
+```{r}
+tribble(
+  ~ degree, ~ uni, ~ dates, ~ details,
+  "Ph.D. in Archaeology", "University of Algarve, Portugal", "2013", "Thesis: The mediterranean influence on the social networks of the Iberian Solutrean",
+  "MA in Archaeology", "University of Algarve, Portugal", "2009", "Final classification: 19 out of 20. Thesis: Solutrean lithic technology from the Vale Boi rockshelter",
+  "Licenciatura in Cultural Heritage", "University of Algarve, Portugal", "2007", "Final classification: 16 out of 20"
+) %>% 
+  detailed_entries(with = degree, what = details, when = dates, where = uni)
+```
+
+
+# Employment History
+
+```{r positions}
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
+  "Assistant Researcher", "University of Algarve, Portugal", "2019-Present", "Position funded by Fundação para a Ciência e a Tecnologia") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
+  "Post-Doctoral Researcher", "University of Algarve, Portugal", "2014-2019", "Position funded by Fundação para Ciência e a Tecnologia") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ details, ~ topic,
+ "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Lithic analysis (MA in Archaeology)", "Courses taught:",
+ "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to lithic analysis (Undergrad. in Archaeology)", "Courses taught:",
+ "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to Data Analysis in Archaeology (Undergrad. in Archaeology)", "Courses taught:",
+  "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Prehistoric adaptations to climate change (Ph.D. in Archaeology)", "Courses taught:"
+) %>%
+  detailed_entries(with = role, when = dates, where = company, why = details, what = topic)
+
+```
+  
+
+# Publications
+
+```{r publications, echo = FALSE, include=FALSE}
+
+scholar <- scholar::get_profile("bc9Ul_cAAAAJ")
+history <- scholar::get_citation_history("bc9Ul_cAAAAJ")
+pubs <- scholar::get_publications("bc9Ul_cAAAAJ")
+
+# Needs updated file
+cascalheira_data<-bibliometrix::readFiles("../CV/WOS.bib")
+cascalheira <- convert2df(cascalheira_data, dbsource = "wos", format = "bibtex")
+wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep = ";", years = 10)$H
+
+```
+
+
+Citation metrics – `r format(Sys.time(), '%B %Y')`: **`r scholar$total_cites`** citations | *[Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ)* H-index: **`r scholar$h_index`** | *[Web of Science]("https://publons.com/researcher/1736137/joao-cascalheira/")* H-index: **`r wos$h_index`**
+
+```{r publicationsgraph, fig.align = 'center', fig.height=2, fig.width=6}
+
+history$year <- as.character(history$year)
+n_citations <- ggplot(data=history, aes(x=year, y=cites)) +
+  geom_bar(stat="identity", fill = "#3f51b5") +
+  labs(title = "",
+              subtitle = "Number of citations per year") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  ylab("") + xlab("")
+
+pubs <- total_artic %>% 
+  group_by(date) %>% 
+  filter(date != "2020") %>% 
+  summarise(N = n()) %>% 
+  rename(year = date)
+
+n_articles <- ggplot(pubs, aes(year, N)) + 
+  geom_bar(stat = "identity", fill = "#3f51b5") +
+    labs(title = "",
+              subtitle = "Number of publications per year") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  xlab("")
+
+grid.arrange(n_articles, n_citations, nrow = 1)
+
+```
+
+\  
+
+## Books and Edited Volumes
+
+```{r}
+
+bibliography_entries("CV.bib") %>% 
+  filter(bibtype %in% c("Book", "Collection")) %>% 
+  arrange(!is.na(date), desc(date))
+
+```
+
+\  
+
+## Articles in Peer-Reviewed Journals
+
+```{r}
+
+bibliography_entries("CV.bib") %>%
+  filter(bibtype == "Article" & !is.na(doi)) %>% 
+  arrange(!is.na(date), desc(date), surnames)
+
+```
+
+\  
+
+## Other Articles
+
+```{r}
+
+bibliography_entries("CV.bib") %>% 
+  filter(!bibtype %in% c("Book", "Unpublished", "Collection") & is.na(doi)) %>%
+  arrange(!is.na(date), desc(date))
+
+```
+
+\  
+
+# Grants, Awards and Fellowships
+
+Total awarded ~500,000€
+
+```{r}
+
+tribble(
+  ~ project, ~ amount, ~ year,
+  "Neanderthals and Early Modern Humans in the Escoural Cave (southern Portugal). Funded by Wenner-Gren Foundation", "18,000€", "2020-",
+  "The origins and evolution of human cognition and the impact of Southwestern European coastal ecology. Funded by Fundação para a Ciência e Tecnologia", "240,000€", "2018-",
+  "Discovering ancient societies in central Portugal: the Muge shellmiddens. Funded by Earthwatch Institute", "51,378€", "2018-",
+  "Investigating the earliest Anatomically Modern Human occupation in Western Algarve. Funded by Institute for Field Research", "21,000€", "2018-",
+  "Ballistic performance of Upper Paleolithic stone-tipped projectiles: an assessment using computational fluid analysis. Funded by Archaeological Institute of America", "4,467€", "2017-",
+  "Portuguese National Science Foundation Post-Doctoral Fellowship", "107,280€", "2014-19",
+  "Portuguese National Science Foundation Ph.D. Fellowship", "47,040€", "2010-13",
+  "COST Action TD0902 – Submerged Prehistoric Archaeology and Landscapes of the Continental Shelf. Short Term Scientific Mission: The Mediterranean influence in the social networks of the Final Solutrean of Iberia: the cave of Parpalló", "1,200€", "2012",
+  "Paleoanthropology Society – Travel grant to the Paleoanthropology Annual Meeting, May, 2010, St. Louis, US", "400€","2010",
+  "University of Algarve – Merit grant", "1,350€", "2009",
+  'Portuguese National Science Foundation – Investigation grant within the project PTDC/HAH/64185/2006 – UcaRVaT – “The last hunter-gatherers in the Tejo valey – the Muge shellmiddens”', "8,940€", "2008-09"
+) %>%
+  brief_entries(project, year, amount)
+
+```
+
+\  
+
+# Main Research Projects
+
+## As Principal Investigator and Co-Investigator
+
+```{r}
+
+tribble(
+  ~ project, ~ year,
+  "Neanderthals and Early Modern Humans in the Escoural Cave (southern Portugal). Funded by the Wenner-Gren Foundation", "2020-",
+  "The origins and evolution of human cognition and the impact of Southwestern European coastal ecology. Co-PI with Nuno Bicho. Funded by Fundação para a Ciência e Tecnologia - ALG-01-0145-FEDER-27833", "2018-",
+  "Discovering ancient societies in central Portugal: the Muge shellmiddens. Co-PI with Célia Gonçalves, Lino André and Nuno Bicho. Funded by the Earthwatch Institute", "2018-",
+  "Investigating the Earliest anatomically modern human occupation in western Algarve. Co-PI with Nuno Bicho. Funded by the Institute for Field Research", "2018-",
+  "Ballistic performance of Upper Paleolithic stone-tipped projectiles: an assessment using computational fluid analysis. Funded by the Archaeological Institute of America", "2017-"
+) %>%
+  brief_entries(project, year)
+
+```
+
+\  
+
+## As Collaborator
+
+```{r}
+
+tribble(
+  ~ project, ~ year,
+  "The Muge Shellmiddens Project: A new portal to the last hunter-gatherers the Tagus valley, Portugal. PI: Célia Gonçalves. Funded by the Fundação para a Ciência e Tecnologia - ALG-01-0145-FEDER-29680", "2018-",
+  "Climate change during the Quaternary in Inhambane, Southwestern Mozambique, and its role in human evolution. PI: Ana Gomes. Funded by the Fundação para a Ciência e Tecnologia - PTDC/HAR-ARQ/28148/2017", "2018-",
+  "Middle and Late Stone Archaeology in Machampane Valley, Limpopo River basin, southern Mozambique. PI: Nuno Bicho. Funded by the National Geographic Society", "2017-18",
+  "Stone Age Vilankulos: Modern Human Origins Research south of the Rio Save, Mozambique. PI: Jonathan Haws. Funded by Fundação para a Ciência e Tecnologia", "2016-",
+  "Middle Stone Age Archaeology survey in the Limpopo and Elephant rivers valleys, southern Mozambique. PI: Nuno Bicho. Funded by the National Geographic Society/Waitt - W-373-15", "2015-16",
+  "Middle Stone Age archaeology and the origins of modern humans in Southern Mozambique. PI: Nuno Bicho. Funded by the Fundação para a Ciência e Tecnologia - PTDC/EPH-ARQ/4998/2012", "2013-15",
+  "GIS predictive modeling for the discovery of new Mesolithic sites in Central Portugal. PI: Célia Gonçalves
+Funded by the Calouste Gulbenkian Foundation", "2013-2015",
+  "The last Neanderthals and the emergence of Modern Humans in Southwestern Iberia. PI: Nuno Bicho. Funded by the Fundação para a Ciência e Tecnologia", "2012-14",
+  "On the edge: The first Modern Humans in Southwestern Iberia and the extinction of Neanderthals. PI: Nuno Bicho. Funding: Wenner-Gren Foundation", "2011-12",
+  "The last hunter-gatherers of Muge (Portugal): the origins of social complexity. PI: Nuno Bicho. Funded by the Fundação para a Ciência e Tecnologia - PTDC/HIS‐ARQ/112156/2009", "2012-14"
+) %>%
+  brief_entries(project, year)
+
+
+```
+
+\  
+
+# Conference participation  
+
+## Oral communications  
+
+```{r}
+
+bibliography_entries("CV.bib") %>% 
+  filter(bibtype == "Unpublished" & shorttitle == "Talk") %>% 
+  arrange(!is.na(date), desc(date))
+
+```
+
+\  
+
+## Posters  
+
+```{r}
+
+bibliography_entries("CV.bib") %>% 
+  filter(bibtype == "Unpublished" & shorttitle == "Poster") %>% 
+  arrange(!is.na(date), desc(date))
+
+```
+
+\ 
+
+# Fieldwork
+
+## As coordinator
+
+```{r}
+
+tribble(
+  ~ project, ~ year,
+  "Excavations at the Paleolithic site of Gruta da Companheira, Portugal", "2017-",
+  "Excavations at the Paleolithic site of Vale Boi, Portugal", "2009-",
+  "Excavations at the Mesolithic site of Cabeço da Amoreira, Portugal", "2009-",
+  "Excavations at the Mesolithic site of Cabeço da Arruda, Portugal", "2013",
+  "Excavations at the Paleolithic sites of Gruta Nova da Columbeira and Lapa do Suão, Portugal", "2009"
+) %>%
+  brief_entries(project, year)
+
+```
+
+\  
+
+## As invited specialist
+
+```{r}
+
+tribble(
+  ~ project, ~ year,
+  "Survey and excavations in Mozambique under the project Stone Age Vilankulos: Modern Human Origins Research south of the Rio Save, Mozambique. Lithics specialist and field manager. PI: Jonathan Haws", "2016-",
+  "Excavations at Dehesilla Cave, Spain. Total station specialist. PI: Daniel Garcia Rivero", "2016-",
+  "Survey and excavations in Mozambique under the project Middle Stone Age archaeology and the origins of modern humans in southern Mozambique. Lithics specialist and field manager. PI: Nuno Bicho", "2013-15",
+  "Excavations at Picareiro Cave. Total station specialist. PI: Jonathan Haws", "2014-15"
+) %>%
+  brief_entries(project, year)
+
+```
+
+
+\  
+
+## Other fieldwork
+
+```{r}
+
+tribble(
+  ~ project, ~ year,
+  "Excavations at the Mesolithic site of Cabeço da Amoreira, Portugal. Assistant field manager. PI: Nuno Bicho.", "2008",
+  "Testing at the site of Zavial Rockshelter, Portugal. Excavator. PI: Nuno Bicho.", "2006",
+  "Excavations at the Paleolithic site of Vale Boi, Portugal. Assistant field manager. PI: Nuno Bicho", "2005-06",
+  "Excavations at the Mesolithic site of Barranco das Quebradas, Portugal. Excavator. PI: Maria J. Valente", "2004"
+) %>%
+  brief_entries(project, year)
+
+```
+
+\  
+
+# Extension and knowledge dissemination
+
+## Student supervision
+
+```{r}
+
+tribble(
+  ~ student, ~ year,
+  "Joana Belmiro (M.A. dissertation, University of Algarve, Portugal)", "2017-",
+  "Pedro Horta (Ph.D. thesis, University of Algarve, Portugal)", "2017-",
+  "Joana Belmiro (Undergrad. dissertation, University of Algarve, Portugal)", "2017",
+  "Pedro Horta (M.A. dissertation, University of Algarve, Portugal)", "2014-15"
+) %>%
+  brief_entries(student, year)
+
+```
+
+\  
+
+## Invited seminars
+
+```{r}
+
+tribble(
+  ~ talk, ~ year,
+  '"A última decada de trabalhos arqueológicos no concheiro do Cabeço da Amoreira, Muge". Muge, Salvaterra de Magos, PT (with Célia Gonçalves, Nuno Bicho and Lino André)', "2019",
+  '"Evolução humana e a tecnologia dos instrumentos em pedra". Universidade de Coimbra, Coimbra, Portugal, Universidade de Coimbra, Coimbra, PT.', "2017",
+  '"Neanderthal to Modern Humans: the transition in Portugal". Algarve Archaeological Association, São Brás de Alportel, PT', "2017",
+  '"Prehistoric Hunter-Gatherer Adaptations in Southwestern Iberia and Mozambique". Max Planck Institute for the Science of Human History, Jena, DE', "2016",
+  '"The end of the Middle Paleolithic and the arrival of anatomically modern humans to Southwestern Iberia". Max Planck Institute, Leipzig, DE (with Nuno Bicho)', "2016",
+  '"Recent developments in the analysis of lithic technology". University of Seville, ES', "2016",
+  '"Laboratorial techniques for the analysis of lithic industries". University Eduardo Mondlane, Maputo, MZ', "2015",
+  '"Abrupt climate change and human adaptations". University Eduardo Mondlane, Maputo, MZ', "2014",
+  '"Stone Age archaeology in the Niassa region, Mozambique. Preliminary results from the 2014 campaign". Geographical Society of Lisbon, Lisbon, PT (with N. Bicho, J. Haws, O. Madime, C. Gonçalves, V. Aldeias, and M. Benedetti)', "2014",
+  '"Human responses to environmental change: the case of the Portuguese Upper Paleolithic". National Museum of Archaeology, Lisbon, PT', "2014",
+  '"The mediterranean influence on the social networks of the Solutrean in Iberia". National Museum of Archaeology, Lisbon, PT', "2014"
+) %>%
+  brief_entries(talk, year)
+
+```
+
+\  
+
+## Conferences/Symposia Organized
+
+```{r}
+tribble(
+  ~ talk, ~ year,
+  '"European Society for Human Evolution Annual Meeting".   University of Algarve, Faro, PT', "2018",
+  '"International Congress The Solutrean". With Isabell Schmidt, Nuno Bicho and Gerd-Christian Weniger. University of Algarve, Faro, PT', "2017",
+  '"Symposium Global perspectives on the impact of abrupt climate change in hunter-gatherer-technologies". With Nuno Bicho. SAA 2016, Orlando, USA', "2016",
+  'Conference cycle "Arqueologia às 6". Organized by ICArEHB. Faro, PT', "2015-2017",
+  '"Symposium Solutrean points: past and present". With Juan Gibaja Bao. At the International Conference El Solutrense. Almería, ES', "2012",
+  '"IV International Conference of Young Researchers in Archaeology (JIA 2011)". University of Algarve, Faro, PT', "2011",
+  '"Session Demographic processes and cultural change: archaeological perspectives". III International Conference of Young Researchers in Archaeology (JIA 2010). Barcelona, ES', "2010"
+) %>%
+  brief_entries(talk, year)
+
+```
+
+\  
+
+## Workshops and Exhibitions Organized
+
+```{r}
+tribble(
+  ~ talk, ~ year,
+  'Workshop "Data Analysis and R Statistics". University of Algarve, Faro, PT', "2016",
+  'Exhibition "The Prehistoric Origins of the Algarve". Organized by ICArEHB and Centro de Ciência Viva do Algarve. Faro, Tavira, Lagos and Vila do Bispo. PT', "2016",
+  'Exhibition "At the End of the World 30 thousand years ago: the prehistoric hunter-gatherers of Vale Boi". Organized by ICArEHB. Vila do Bispo, PT', "2014",
+  'Workshop "Total Station in Archaeology". University of Algarve, PT. Promoted by NAP', "2011",
+  'Exhibition "On the margins of the past: the Muge shell middens". Salvaterra de Magos, PT. Organized by NAP', "2011",
+  'Conferences "Arqueologia ao Sul". University of Algarve, Faro, PT. Organized by NAP', "2010-14",
+  'Workshop "Analysis of Lithic Industries" (University of Algarve, Faro, PT. Promoted by NAP', "2010",
+  'Workshop "NESPOS On Tour". University of Algarve, Faro PT. Promoted by NAP', "2010"
+) %>%
+  brief_entries(talk, year)
+```
+
+\  
+
+## Tutoring
+
+```{r}
+tribble(
+  ~ talk, ~ year,
+  'Creation of the archaeological survey and excavation Massive Open Online Courses (MOOC) modules of the *Online Learning on African Archeology and Heritage (ONLAAH)* project', "2019-") %>%
+  brief_entries(talk, year)
+```
+
+\  
+
+# Additional Training
+
+* Workshop *Data Analysis and R Statistics*. University of Algarve, Faro, PT.
+* Workshop *EVAN Toolbox*. Max Planck Institute for Evolutionary Abthropology, Leipzig, DE.
+* Workshop *NESPOS on Tour*. University of Algarve, Faro, PT.
+* Workshop *Understanding tool use, multidisciplinary perspectives on the cognition and ecology of tool using behaviors*. Max Planck Institute for Evolutionary Anthropology, Leipzig, DE.
+* Workshop *Tools in organic materials: methods of analysis*. CSIC, Barcelona, ES.
+* Workshop *Advanced SPSS applications*. University of Algarve, Faro, PT.
+* Workshop *Functional studies in non-siliceous rocks*. Lisbon, PT.
+
+\  
+
+# Reviewer for academic journals
+
+* PLoS ONE
+* Journal of Human Evolution
+* Advances in Archaeological Practice
+* Journal of Archaeological Science: Reports
+* Quaternary International
+* Journal of Paleolithic Archaeology
+* African Archaeological Review
+
+\  
+
+# Professional memberships
+
+* European Society for the Study of Human Evolution
+* Society for American Archaeology
+* Paleoanthropology Society
+* Archaeological Institute of America
+
+\  
+
+# Editorial boards
+
+* Cambridge Scholars Publishing – Archaeology Advisory Board
+
+\  
+
+# Languages
+
+* Portuguese (native)
+* English (proficient)
+* Spanish (conversational)
