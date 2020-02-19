@@ -327,12 +327,13 @@ tribble(
 
 # Extension and knowledge dissemination
 
-## Student supervision
+## Student and Postdoctoral supervision
 
 ```{r}
 
 tribble(
   ~ student, ~ year,
+  "Emily Hallinan (Marie Curie Fellow, ICArEHB, University of Algarve", "2020-",
   "Joana Belmiro (M.A. dissertation, University of Algarve, Portugal)", "2017-",
   "Pedro Horta (Ph.D. thesis, University of Algarve, Portugal)", "2017-",
   "Joana Belmiro (Undergrad. dissertation, University of Algarve, Portugal)", "2017",
