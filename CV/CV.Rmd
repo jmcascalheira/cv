@@ -46,6 +46,8 @@ poster <- bibliography_entries("CV.bib") %>%
 
 ```
 
+\  
+
 # Summary
 
 I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct three field projects, I am co-responsible for a project investigating the origins and evolution of modern human cognition in southwestern Iberia, and a colaborator in different projects in Mozambique. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences.
@@ -99,8 +101,7 @@ history <- scholar::get_citation_history("bc9Ul_cAAAAJ")
 pubs <- scholar::get_publications("bc9Ul_cAAAAJ")
 
 # Needs updated file
-cascalheira_data<-bibliometrix::readFiles("../CV/WOS.bib")
-cascalheira <- convert2df(cascalheira_data, dbsource = "wos", format = "bibtex")
+cascalheira <- convert2df(file = "../CV/WOS.bib", dbsource = "wos", format = "bibtex")
 wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep = ";", years = 10)$H
 
 ```
@@ -135,7 +136,7 @@ grid.arrange(n_articles, n_citations, nrow = 1)
 
 ```
 
-\  
+\newpage
 
 ## Books and Edited Volumes
 
@@ -197,7 +198,7 @@ tribble(
 
 ```
 
-\  
+\newpage
 
 # Main Research Projects
 
@@ -351,6 +352,7 @@ tribble(
 
 tribble(
   ~ talk, ~ year,
+  '"Proto-Solutrean and Solutrean adaptations in westernmost Iberia: the Vale Boi and Lapa do Picareiro case-studies". Erlangen, DE (with Nuno Bicho, Joana Belmiro and Jonathan Haws)', "2019",
   '"A última decada de trabalhos arqueológicos no concheiro do Cabeço da Amoreira, Muge". Muge, Salvaterra de Magos, PT (with Célia Gonçalves, Nuno Bicho and Lino André)', "2019",
   '"Evolução humana e a tecnologia dos instrumentos em pedra". Universidade de Coimbra, Coimbra, Portugal, Universidade de Coimbra, Coimbra, PT.', "2017",
   '"Neanderthal to Modern Humans: the transition in Portugal". Algarve Archaeological Association, São Brás de Alportel, PT', "2017",
@@ -439,6 +441,7 @@ tribble(
 * Quaternary International
 * Journal of Paleolithic Archaeology
 * African Archaeological Review
+* Antiquity
 
 \  
 
