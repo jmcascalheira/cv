@@ -102,7 +102,7 @@ pubs <- scholar::get_publications("bc9Ul_cAAAAJ")
 
 # Needs updated file
 cascalheira <- convert2df(file = "../CV/WOS.bib", dbsource = "wos", format = "bibtex")
-wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep = ";", years = 10)$H
+wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep = ";", years = 15)$H
 
 ```
 
