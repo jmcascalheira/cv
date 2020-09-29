@@ -5,7 +5,7 @@ qualifications: Ph.D.
 position: "Assistant Researcher"
 address: "ICArEHB, University of Algarve, Campus de Gambelas, 8005-139 Faro, Portugal"
 phone: +351 912 468 699
-www: www.icarehb.com/team/cascalheira
+www: www.joaocascalheira.com
 email: "jmcascalheira@ualg.pt"
 twitter: joaocascalheira
 headcolor: "3f51b5"
@@ -119,6 +119,10 @@ n_citations <- ggplot(data=history, aes(x=year, y=cites)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
   ylab("") + xlab("")
 
+total_artic <- as.data.frame(
+  total_artic
+)
+
 pubs <- total_artic %>% 
   group_by(date) %>% 
   filter(date != "2020") %>% 
@@ -198,7 +202,6 @@ tribble(
 
 ```
 
-\newpage
 
 # Main Research Projects
 
