@@ -2,7 +2,7 @@
 name: João Cascalheira
 date: "`r format(Sys.time(), '%B %Y')`"
 qualifications: Ph.D.
-position: "Assistant Researcher"
+position: "Researcher"
 address: "ICArEHB, University of Algarve, Campus de Gambelas, 8005-139 Faro, Portugal"
 phone: +351 912 468 699
 www: www.joaocascalheira.com
@@ -80,18 +80,7 @@ tribble(
   "Post-Doctoral Researcher", "University of Algarve, Portugal", "2014-2019", "Position funded by Fundação para Ciência e a Tecnologia") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
-tribble(
- ~ role, ~ company, ~ dates, ~ details, ~ topic,
- "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Acraheological Theory (MA in Archaeology)", "Courses taught:",
- "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Lithic analysis (MA in Archaeology)", "Courses taught:",
- "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to lithic analysis (Undergrad. in Archaeology)", "Courses taught:",
- "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to Data Analysis in Archaeology (Undergrad. in Archaeology)", "Courses taught:",
-  "Visitor Assistant Professor", "University of Algarve, Portugal", "2014-Present", "Prehistoric adaptations to climate change (Ph.D. in Archaeology)", "Courses taught:"
-) %>%
-  detailed_entries(with = role, when = dates, where = company, why = details, what = topic)
-
 ```
-  
 
 # Publications
 
@@ -116,20 +105,20 @@ Citation metrics – `r format(Sys.time(), '%B %Y')`: **`r scholar$total_cites`*
 ```{r publicationsgraph, fig.align = 'center', fig.height=2, fig.width=6}
 
 history$year <- as.character(history$year)
-n_citations <- ggplot(data=history, aes(x=year, y=cites)) +
+n_citations <- ggplot(data=history, aes(x=year, y=cites, fill=factor(ifelse(year=="2021","Highlighted","Normal")))) +
   geom_bar(stat="identity", fill = "#3f51b5") +
-  labs(title = "",
-              subtitle = "Number of citations per year") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  labs(title = "", subtitle = "Number of citations per year") +
+  scale_x_discrete(breaks = history$year, labels = history$year, limits = history$year) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position="none") + 
   ylab("") + xlab("")
 
 total_artic <- as.data.frame(
   total_artic
 )
 
-pubs <- total_artic %>% 
-  group_by(date) %>% 
-  filter(date != "2020") %>% 
+pubs <- total_artic %>%
+  drop_na(date) %>% 
+  group_by(date) %>%  
   summarise(N = n()) %>% 
   rename(year = date)
 
@@ -137,14 +126,15 @@ n_articles <- ggplot(pubs, aes(year, N)) +
   geom_bar(stat = "identity", fill = "#3f51b5") +
     labs(title = "",
               subtitle = "Number of publications per year") +
+  scale_x_discrete(breaks = pubs$year, labels = pubs$year, limits = pubs$year) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  xlab("")
+  xlab("") +
+  scale_y_continuous(label = scales::number_format(accuracy = 1))
 
 grid.arrange(n_articles, n_citations, nrow = 1)
 
 ```
 
-\newpage
 
 ## Books and Edited Volumes
 
@@ -180,7 +170,6 @@ bibliography_entries("CV.bib") %>%
 
 ```
 
-\  
 
 # Grants, Awards and Fellowships
 
@@ -334,6 +323,25 @@ tribble(
 
 \  
 
+# Teaching
+
+```{r teaching}
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ details, ~ topic,
+"Invited Professor", "University of Coimbra, Portugal", "2018-2019", "Field Archaeology (MA in Human Evolution)", "Courses taught:",
+ "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Archaeological Theory (MA in Archaeology)", "Courses taught:",
+ "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Lithic analysis (MA in Archaeology)", "Courses taught:",
+ "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to lithic analysis (Undergrad. in Archaeology)", "Courses taught:",
+ "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to Data Analysis in Archaeology (Undergrad. in Archaeology)", "Courses taught:",
+  "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Prehistoric adaptations to climate change (Ph.D. in Archaeology)", "Courses taught:"
+) %>%
+  detailed_entries(with = role, when = dates, where = company, why = details, what = topic)
+
+```
+
+\  
+
 # Extension and knowledge dissemination
 
 ## Student and Postdoctoral supervision
@@ -442,17 +450,18 @@ tribble(
 
 \  
 
-# Reviewer for academic journals
+# Reviewer for academic journals and funding agencies
 
-* PLoS ONE
-* Journal of Human Evolution
-* Advances in Archaeological Practice
-* Journal of Archaeological Science
-* Journal of Archaeological Science: Reports
-* Quaternary International
-* Journal of Paleolithic Archaeology
-* African Archaeological Review
-* Antiquity
+* PLoS ONE (4)
+* Journal of Human Evolution (2)
+* Advances in Archaeological Practice (2)
+* Journal of Archaeological Science (1)
+* Journal of Archaeological Science: Reports (2)
+* Quaternary International (1)
+* Journal of Paleolithic Archaeology (2)
+* African Archaeological Review (1)
+* Antiquity (1)
+* National Science Centre Poland (1)
 
 \  
 
@@ -462,6 +471,7 @@ tribble(
 * Society for American Archaeology
 * Paleoanthropology Society
 * Archaeological Institute of America
+* Seminário Permanente dos Jovens Cientistas do Instituto de Altos Estudos da Academia das Ciências de Lisboa, Membro.
 
 \  
 
