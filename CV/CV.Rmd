@@ -51,7 +51,7 @@ poster <- bibliography_entries("CV.bib") %>%
 
 # Summary
 
-I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct three field projects, I am co-responsible for several projects investigating the Middle and Upper Paleolithic of southwestern Iberia, and a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences.
+I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia. I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences.
 
 
 # Education
@@ -121,7 +121,7 @@ n_citations <- ggplot(data=history, aes(x=year, y=cites)) +
   labs(title = "", subtitle = "New citations per year") +
   scale_x_discrete(breaks = history$year, labels = everysecond(history$year), limits = history$year) +
   scale_y_continuous(breaks = c(0, 75, 150)) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position="none", axis.ticks = element_blank(), text=element_text(size=14)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position="none", axis.ticks = element_blank(), text=element_text(size=13)) +
   ylab("") + xlab("")
 
 
@@ -150,7 +150,7 @@ n_articles <- ggplot(pubs, aes(year, N)) +
   labs(title = "", subtitle = "New publications per year") +
   scale_x_discrete(breaks = pubs$year,labels = everysecond(pubs$year), limits = pubs$year) +
   scale_y_continuous(limits = c(0, 12), breaks = c(0, 6, 12)) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1), text=element_text(size=14), axis.ticks = element_blank()) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), text=element_text(size=13), axis.ticks = element_blank()) +
   xlab("")
 
 grid.arrange(n_articles, n_citations, nrow = 1)
@@ -369,6 +369,30 @@ tribble(
 
 \  
 
+
+# Scientific and University management
+
+```{r management}
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
+  "Coordinator", "ICArEHB - University of Algarve, Portugal", "2022-", "Research Line on Dynamics of Paleolithic people in Europe") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
+  "Coordinator", "ICArEHB - University of Algarve, Portugal", "2019-2021", "Research Line on African Archaeology and Human Evolution") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
+  "Elected member", "University of Algarve, Portugal", "2021-2024", "UAlg's General Council") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+```
+
+\  
+
 # Extension and knowledge dissemination
 
 ## Student and Postdoctoral supervision
@@ -461,6 +485,7 @@ tribble(
 ```{r}
 tribble(
   ~ talk, ~ year,
+  'Instructor of Statistics in Archaeology using R in one the Training in Frontier Archaeology ICArEHB actions', "2022",
   'Creation of the archaeological survey and excavation Massive Open Online Courses (MOOC) modules of the *Online Learning on African Archeology and Heritage (ONLAAH)* project', "2019-") %>%
   brief_entries(talk, year)
 ```
@@ -481,6 +506,8 @@ tribble(
 
 # Reviewer for academic journals and funding agencies
 
+* Fund for Scientific Research – FNRS Belgium (1)
+* Nature Scientific Reports (1)
 * PLoS ONE (4)
 * Journal of Human Evolution (2)
 * Advances in Archaeological Practice (2)
