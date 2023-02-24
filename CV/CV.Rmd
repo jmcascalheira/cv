@@ -51,7 +51,7 @@ poster <- bibliography_entries("CV.bib") %>%
 
 # Summary
 
-I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia. I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences.
+I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently I am the Director of [ICArEHB](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at the University of Algarve.
 
 
 # Education
@@ -376,7 +376,12 @@ tribble(
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
-  "Coordinator", "ICArEHB - University of Algarve, Portugal", "2022-", "Research Line on Dynamics of Paleolithic people in Europe") %>%
+  "Director", "ICArEHB - University of Algarve, Portugal", "2023-", "Interdisciplinary Center for Archaeology and the Evolution of Human Behaviour") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
+  "Coordinator", "ICArEHB - University of Algarve, Portugal", "2022", "Research Line on Dynamics of Paleolithic people in Europe") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
 tribble(
