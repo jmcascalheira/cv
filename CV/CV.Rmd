@@ -131,12 +131,9 @@ total_artic <- as.data.frame(
 )
 
 
-
-
-
 pubs <- total_artic %>%
   mutate(issued = as.character(unlist(issued))) %>% 
-  filter(issued != "2022") %>% 
+  filter(issued != "2023") %>% 
   drop_na(issued) %>% 
   group_by(issued) %>%  
   summarise(N = n()) %>% 
@@ -149,7 +146,7 @@ n_articles <- ggplot(pubs, aes(year, N)) +
 #              method = "lm", se= FALSE, color = "firebrick1", size = 2) +
   labs(title = "", subtitle = "New publications per year") +
   scale_x_discrete(breaks = pubs$year,labels = everysecond(pubs$year), limits = pubs$year) +
-  scale_y_continuous(limits = c(0, 12), breaks = c(0, 6, 12)) +
+  scale_y_continuous(limits = c(0, 12), breaks = c(0, 6, 12, 18)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1), text=element_text(size=13), axis.ticks = element_blank()) +
   xlab("")
 
@@ -157,6 +154,7 @@ grid.arrange(n_articles, n_citations, nrow = 1)
 
 ```
 
+\ 
 
 ## Books and Edited Volumes
 
@@ -319,8 +317,9 @@ tribble(
 
 tribble(
   ~ project, ~ year,
-  "Survey and excavations in Mozambique under the project Stone Age Vilankulos: Modern Human Origins Research south of the Rio Save, Mozambique. Lithics specialist and field manager. PI: Jonathan Haws", "2016-",
-  "Excavations at Dehesilla Cave, Spain. Total station specialist. PI: Daniel Garcia Rivero", "2016-",
+  "DISPERSALS - Resilience, and innovation in Late Pleistocene SE Africa. Lithics specialist. PI: Nuno Bicho", "2023-",
+  "Survey and excavations in Mozambique under the project Stone Age Vilankulos: Modern Human Origins Research south of the Rio Save, Mozambique. Lithics specialist and field manager. PI: Jonathan Haws", "2016-19",
+  "Excavations at Dehesilla Cave, Spain. Total station specialist. PI: Daniel Garcia Rivero", "2016-19",
   "Survey and excavations in Mozambique under the project Middle Stone Age archaeology and the origins of modern humans in southern Mozambique. Lithics specialist and field manager. PI: Nuno Bicho", "2013-15",
   "Excavations at Picareiro Cave. Total station specialist. PI: Jonathan Haws", "2014-15"
 ) %>%
@@ -355,13 +354,13 @@ tribble(
 tribble(
  ~ role, ~ company, ~ dates, ~ details, ~ topic,
 "Invited Professor", "University of Coimbra, Portugal", "2018-2019", "Field Archaeology (MA in Human Evolution)", "Courses taught:",
-"Invited Professor", "University of Algarve, Portugal", "2021-Present", "Introduction to Archaeology (Undergrad. in Archaeology)", "Courses taught:", 
+"Invited Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to Archaeology (Undergrad. in Archaeology)", "Courses taught:", 
 "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Archaeological Theory (MA in Archaeology)", "Courses taught:",
  "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Lithic analysis (MA in Archaeology)", "Courses taught:",
  "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to lithic analysis (Undergrad. in Archaeology)", "Courses taught:",
  "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to Data Analysis in Archaeology (Undergrad. in Archaeology)", "Courses taught:",
   "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Prehistoric adaptations to climate change (Ph.D. in Archaeology)", "Courses taught:",
-"Invited Professor", "University of Algarve, Portugal", "2022-Present", "Digging data: quantitative and reproducible analysis in Archaeology (Ph.D. in Archaeology)", "Courses taught:",
+"Invited Professor", "University of Algarve, Portugal", "2014-Present", "Digging data: quantitative and reproducible analysis in Archaeology (Ph.D. in Archaeology)", "Courses taught:",
 ) %>%
   detailed_entries(with = role, when = dates, where = company, why = details, what = topic)
 
@@ -406,11 +405,13 @@ tribble(
 
 tribble(
   ~ student, ~ year,
-  "Emily Hallinan (Marie Curie Fellow, ICArEHB, University of Algarve", "2020-",
-  "Jovan Galfi (Ph.D. dissertation, ICArEHB, University of Algarve", "2020-",
+  "Nolan Ferar (Ph.D. dissertation, ICArEHB, University of Algarve, Portugal) - Funded by FCT", "2022-",
+  "Mpumi Maringa (Ph.D. dissertation, ICArEHB, University of Algarve, Portugal", "2022-",
+  "Jovan Galfi (Ph.D. dissertation, ICArEHB, University of Algarve, Portugal", "2020-",
   "Joana Belmiro (Ph.D. dissertation, University of Algarve, Portugal) - Funded by FCT", "2020-",
   "Daniela Maio (Ph.D. dissertation, University of Algarve, Portugal)", "2019-",
-  "Pedro Horta (Ph.D. dissertation, University of Algarve, Portugal) - Funded by FCT", "2017-",
+  "Emily Hallinan (Marie Curie Fellow, ICArEHB, University of Algarve", "2020-2022",
+  "Pedro Horta (Ph.D. dissertation, University of Algarve, Portugal) - Funded by FCT", "2017-2022",
   "Joana Belmiro (M.A. dissertation, University of Algarve, Portugal)", "2017-2019",
   "Joana Belmiro (Undergrad. dissertation, University of Algarve, Portugal)", "2017",
   "Pedro Horta (M.A. dissertation, University of Algarve, Portugal)", "2014-15"
@@ -427,6 +428,8 @@ tribble(
 
 tribble(
   ~ talk, ~ year,
+  '"40 mil anos depois: o que sabemos sobre o desaparecimento dos Neandertais". Academia das Ciências de Lisboa, Lisbon', "2023",
+  '"O que sabemos sobre o desaparecimento dos Neandertais?". FI.CA, Lisbon', "2022",
   '"Human adaptations to the Last Glacial Maximum in the Iberian Peninsula". Hebrew University MA seminar series "The social dimensions of human adaptation to extreme environments", Online', "2021",
   '"Proto-Solutrean and Solutrean adaptations in westernmost Iberia: the Vale Boi and Lapa do Picareiro case-studies". Erlangen, DE (with Nuno Bicho, Joana Belmiro and Jonathan Haws)', "2019",
   '"A última decada de trabalhos arqueológicos no concheiro do Cabeço da Amoreira, Muge". Muge, Salvaterra de Magos, PT (with Célia Gonçalves, Nuno Bicho and Lino André)', "2019",
@@ -519,7 +522,7 @@ tribble(
 * Journal of Archaeological Science (1)
 * Journal of Archaeological Science: Reports (2)
 * Quaternary International (1)
-* Journal of Paleolithic Archaeology (2)
+* Journal of Paleolithic Archaeology (3)
 * African Archaeological Review (1)
 * Antiquity (1)
 * National Science Centre Poland (1)
