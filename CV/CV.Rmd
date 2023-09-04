@@ -51,7 +51,7 @@ poster <- bibliography_entries("CV.bib") %>%
 
 # Summary
 
-I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently I am the Director of [ICArEHB](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at the University of Algarve.
+I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [ICArEHB](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at the University of Algarve.
 
 
 # Education
@@ -101,7 +101,7 @@ wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep 
 ```
 
 
-Citation metrics – march 2022: **`r scholar$total_cites`** citations | *[Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ)* H-index: **`r scholar$h_index`** | *[Web of Science]("https://publons.com/researcher/1736137/joao-cascalheira/")* H-index: **`r wos$h_index`**
+Citation metrics – August 2023: **`r scholar$total_cites`** citations | *[Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ)* H-index: **`r scholar$h_index`** | *[Web of Science]("https://publons.com/researcher/1736137/joao-cascalheira/")* H-index: **`r wos$h_index`**
 
 ```{r publicationsgraph, fig.align = 'center', fig.height=2, fig.width=6}
 
@@ -244,6 +244,7 @@ tribble(
 
 tribble(
   ~ project, ~ year,
+  "Are Neanderthals adapted to heavy masticatory and paramasticatory function?. PI: Ricardo Godinho. Funded by the Fundação para a Ciência e Tecnologia - 022.07737.PTDC", "2023-",
   "The Muge Shellmiddens Project: A new portal to the last hunter-gatherers the Tagus valley, Portugal. PI: Célia Gonçalves. Funded by the Fundação para a Ciência e Tecnologia - ALG-01-0145-FEDER-29680", "2018-",
   "Climate change during the Quaternary in Inhambane, Southwestern Mozambique, and its role in human evolution. PI: Ana Gomes. Funded by the Fundação para a Ciência e Tecnologia - PTDC/HAR-ARQ/28148/2017", "2018-",
   "Middle and Late Stone Archaeology in Machampane Valley, Limpopo River basin, southern Mozambique. PI: Nuno Bicho. Funded by the National Geographic Society", "2017-18",
@@ -300,7 +301,7 @@ tribble(
   "Excavations at the Mesolithic site of Cabeço dos Ossos, Portugal", "2021",
   "Excavations at the Paleolithic site of Gruta do Escoural, Portugal", "2020-",
   "Excavations at the Paleolithic site of Gruta da Companheira, Portugal", "2017-",
-  "Excavations at the Paleolithic site of Vale Boi, Portugal", "2009-",
+  "Excavations at the Paleolithic site of Vale Boi, Portugal", "2009-2019",
   "Excavations at the Mesolithic site of Cabeço da Amoreira, Portugal", "2009-",
   "Excavations at the Mesolithic site of Cabeço da Arruda, Portugal", "2013",
   "Excavations at the Paleolithic sites of Gruta Nova da Columbeira and Lapa do Suão, Portugal", "2009"
@@ -502,6 +503,7 @@ tribble(
 
 # Additional Training
 
+* Workshop *Science and public policy: how to build bridges?*. University of Algarve, Faro, PT.
 * Workshop *Data Analysis and R Statistics*. University of Algarve, Faro, PT.
 * Workshop *EVAN Toolbox*. Max Planck Institute for Evolutionary Abthropology, Leipzig, DE.
 * Workshop *NESPOS on Tour*. University of Algarve, Faro, PT.
@@ -526,6 +528,8 @@ tribble(
 * African Archaeological Review (1)
 * Antiquity (1)
 * National Science Centre Poland (1)
+* Paleoanthropology Journal (1)
+* Journal of Open Archaeology Data (1)
 
 \  
 
