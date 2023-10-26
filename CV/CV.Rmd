@@ -51,7 +51,7 @@ poster <- bibliography_entries("CV.bib") %>%
 
 # Summary
 
-I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [ICArEHB](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at the University of Algarve.
+I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [ICArEHB](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at [Universidade do Algarve](www.ualg.pt).
 
 
 # Education
@@ -59,9 +59,9 @@ I am an archaeologist interested in prehistoric hunter-gatherer adaptations, spe
 ```{r}
 tribble(
   ~ degree, ~ uni, ~ dates, ~ details,
-  "Ph.D. in Archaeology", "University of Algarve, Portugal", "2013", "Thesis: The mediterranean influence on the social networks of the Iberian Solutrean",
-  "MA in Archaeology", "University of Algarve, Portugal", "2009", "Final classification: 19 out of 20. Thesis: Solutrean lithic technology from the Vale Boi rockshelter",
-  "Licenciatura in Cultural Heritage", "University of Algarve, Portugal", "2007", "Final classification: 16 out of 20"
+  "Ph.D. in Archaeology", "Universidade do Algarve, Portugal", "2013", "Thesis: The mediterranean influence on the social networks of the Iberian Solutrean",
+  "MA in Archaeology", "Universidade do Algarve, Portugal", "2009", "Final classification: 19 out of 20. Thesis: Solutrean lithic technology from the Vale Boi rockshelter",
+  "Licenciatura in Cultural Heritage", "Universidade do Algarve, Portugal", "2007", "Final classification: 16 out of 20"
 ) %>% 
   detailed_entries(with = degree, what = details, when = dates, where = uni)
 ```
@@ -73,12 +73,12 @@ tribble(
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
-  "Assistant Researcher", "University of Algarve, Portugal", "2019-Present", "Position funded by Fundação para a Ciência e a Tecnologia") %>%
+  "Assistant Researcher", "Universidade do Algarve, Portugal", "2019-Present", "Position funded by Fundação para a Ciência e a Tecnologia") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
-  "Post-Doctoral Researcher", "University of Algarve, Portugal", "2014-2019", "Position funded by Fundação para Ciência e a Tecnologia") %>%
+  "Post-Doctoral Researcher", "Universidade do Algarve, Portugal", "2014-2019", "Position funded by Fundação para Ciência e a Tecnologia") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
 ```
@@ -209,7 +209,7 @@ tribble(
   "Portuguese National Science Foundation Ph.D. Fellowship", "47,040€", "2010-13",
   "COST Action TD0902 – Submerged Prehistoric Archaeology and Landscapes of the Continental Shelf. Short Term Scientific Mission: The Mediterranean influence in the social networks of the Final Solutrean of Iberia: the cave of Parpalló", "1,200€", "2012",
   "Paleoanthropology Society – Travel grant to the Paleoanthropology Annual Meeting, May, 2010, St. Louis, US", "400€","2010",
-  "University of Algarve – Merit grant", "1,350€", "2009",
+  "Universidade do Algarve – Merit grant", "1,350€", "2009",
   'Portuguese National Science Foundation – Investigation grant within the project PTDC/HAH/64185/2006 – UcaRVaT – “The last hunter-gatherers in the Tejo valey – the Muge shellmiddens”', "8,940€", "2008-09"
 ) %>%
   brief_entries(project, year, amount)
@@ -355,13 +355,13 @@ tribble(
 tribble(
  ~ role, ~ company, ~ dates, ~ details, ~ topic,
 "Invited Professor", "University of Coimbra, Portugal", "2018-2019", "Field Archaeology (MA in Human Evolution)", "Courses taught:",
-"Invited Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to Archaeology (Undergrad. in Archaeology)", "Courses taught:", 
-"Invited Professor", "University of Algarve, Portugal", "2014-Present", "Archaeological Theory (MA in Archaeology)", "Courses taught:",
- "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Lithic analysis (MA in Archaeology)", "Courses taught:",
- "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to lithic analysis (Undergrad. in Archaeology)", "Courses taught:",
- "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Introduction to Data Analysis in Archaeology (Undergrad. in Archaeology)", "Courses taught:",
-  "Invited Professor", "University of Algarve, Portugal", "2014-Present", "Prehistoric adaptations to climate change (Ph.D. in Archaeology)", "Courses taught:",
-"Invited Professor", "University of Algarve, Portugal", "2014-Present", "Digging data: quantitative and reproducible analysis in Archaeology (Ph.D. in Archaeology)", "Courses taught:",
+"Invited Professor", "Universidade do Algarve, Portugal", "2014-Present", "Introduction to Archaeology (Undergrad. in Archaeology)", "Courses taught:", 
+"Invited Professor", "Universidade do Algarve, Portugal", "2014-Present", "Archaeological Theory (MA in Archaeology)", "Courses taught:",
+ "Invited Professor", "Universidade do Algarve, Portugal", "2014-Present", "Lithic analysis (MA in Archaeology)", "Courses taught:",
+ "Invited Professor", "Universidade do Algarve, Portugal", "2014-Present", "Introduction to lithic analysis (Undergrad. in Archaeology)", "Courses taught:",
+ "Invited Professor", "Universidade do Algarve, Portugal", "2014-Present", "Introduction to Data Analysis in Archaeology (Undergrad. in Archaeology)", "Courses taught:",
+  "Invited Professor", "Universidade do Algarve, Portugal", "2014-Present", "Prehistoric adaptations to climate change (Ph.D. in Archaeology)", "Courses taught:",
+"Invited Professor", "Universidade do Algarve, Portugal", "2014-Present", "Digging data: quantitative and reproducible analysis in Archaeology (Ph.D. in Archaeology)", "Courses taught:",
 ) %>%
   detailed_entries(with = role, when = dates, where = company, why = details, what = topic)
 
@@ -376,27 +376,69 @@ tribble(
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
-  "Director", "ICArEHB - University of Algarve, Portugal", "2023-", "Interdisciplinary Center for Archaeology and the Evolution of Human Behaviour") %>%
+  "Director", "ICArEHB - Universidade do Algarve, Portugal", "2023-", "Interdisciplinary Center for Archaeology and the Evolution of Human Behaviour") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
-  "Coordinator", "ICArEHB - University of Algarve, Portugal", "2022", "Research Line on Dynamics of Paleolithic people in Europe") %>%
+  "Coordinator", "ICArEHB - Universidade do Algarve, Portugal", "2022", "Research Line on Dynamics of Paleolithic people in Europe") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
-  "Coordinator", "ICArEHB - University of Algarve, Portugal", "2019-2021", "Research Line on African Archaeology and Human Evolution") %>%
+  "Coordinator", "ICArEHB - Universidade do Algarve, Portugal", "2019-2021", "Research Line on African Archaeology and Human Evolution") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
-  "Elected member", "University of Algarve, Portugal", "2021-2024", "UAlg's General Council") %>%
+  "Elected member", "Universidade do Algarve, Portugal", "2021-2024", "UAlg's General Council") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
 ```
 
 \  
+
+# Search committees
+
+```{r committees}
+
+tribble(
+  ~ committee, ~ year,
+  "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in climate modeling, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 046/2023", "2023",
+  "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in geoarchaeology, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 037/2023", "2023",
+  "Call for 1 MA Fellowship (BI) in Archaeology at ICArEHB. Notice nº 001/2023", "2023",
+  "Call for 3 PhD Fellowships (BI) in Archaeology, expertise in isotopes, phytoliths, computational modeling, within DISPERSALS: Dispersals, resilience, and innovation in Late Pleistocene SE Africa, ERC-2021-ADG. Notice nº 039/2023", "2023",
+  "Call for 1 Principal Researcher in Archaeology within DISPERSALS: Dispersals, resilience, and innovation in Late Pleistocene SE Africa, ERC-2021-ADG. Notice nº 15831/2023", "2023",
+  "Call for 1 Post-Doc Fellowship (BI) in Archaeology, within DIASPORA: Early Human migrations and the Nile Valley: the Kerma region during the MSA. Notice nº 071/2022", "2023",
+  "Call for 4 Auxiliar Researchers in Archaeology, expertises in isotopes, phytoliths, computational modeling, biomarkers, within DISPERSALS: Dispersals, resilience, and innovation in Late Pleistocene SE Africa, ERC-2021-ADG. Notice n.º 17876/2022", "2022",
+  "Call for 1 post-doctoral fellowship in Archaeology, expertise in fauna taphonomy, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 070/2022", "2022",
+  "Call for 1 post-doctoral Assistant Researcher contract in Archaeology at ICArEHB, through CEEC institutional program. Notice nº 202205/0517", "2022",
+  "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in lithic analysis, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 034/2022", "2022",
+  "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in microfauna analysis, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 035/2022", "2022",
+  "Call for 1 post-doctoral fellowship in Archaeology, expertise in isotope analysis, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 039/2022", "2022",
+  "Call for 1 post-doctoral Assistant Researcher contract in Archaeology at ICArEHB, through CEEC institutional program", "2022",
+  "Call for 1 MA fellowship in Archaeology within the project ALG-45-2020-41– SciTour - Turismo Científico: uma nova abordagem para promover o turismo no Algarve", "2022",
+  "Call for 1 Research Fellowship (BI) in Archaeology within the project DIASPORA – As primeiras migrações humanas no vale do Nilo: a região de Kerma durante o MSA (PTDC/HAR-ARQ/0131/2020). Notice nº 024/2022", "2022",
+  "Call for 1 Research Fellowship (BI) in Archaeology at ICArEHB (UID/ARQ/04211/2019). Notice nº 057/2021", "2021",
+  "Call for 1 Research Fellowship (BI) in Archaeology within The Muge Shellmiddens Project: A new Portal to the last hunter-gatherers the Tagus Valley, Portugal (ALG-01-0145-FEDER-29680). Notice nº 033/2021.", "2021",
+  "Call for 4 Ph.D. fellowships (BD) in Prehistoric Archaeology at ICArEHB (UID/ARQ/04211/2019)", "2021",
+  "Call for 1 post-doctoral contract in Archaeology at ICArEHB (UID/ARQ/04211/2019)", "2020",
+  "Call for 1 Research Fellowship (BI) in 3D Animation within The Muge Shellmiddens Project: A new Portal to the last hunter-gatherers the Tagus Valley, Portugal (ALG-01-0145-FEDER-29680). Notice nº 079/2019", "2020",
+  "Call for 1 Research Fellowship (BI) in Computer Science and engineering within The Muge Shellmiddens Project: A new Portal to the last hunter-gatherers the Tagus Valley, Portugal (ALG-01-0145-FEDER-29680). Notice nº 001/2020", "2020",
+  "Call for 1 Research Fellowship (BI) in 3D Animation within The Muge Shellmiddens Project: A new Portal to the last hunter-gatherers the Tagus Valley, Portugal (ALG-01-0145-FEDER-29680). Notice nº 002/2020", "2020",
+  "Call for 1 Research Fellowship (BI) in Design within The Muge Shellmiddens Project: A new Portal to the last hunter-gatherers the Tagus Valley, Portugal (ALG-01-0145-FEDER-29680). Notice nº 018/2020", "2020",
+  "Call for 1 Research Fellowship (BI) in Archaeology within The origins and evolution of human cognition and the impact of Southwestern European coastal ecology (ALG-01-0145-FEDER-27833). Notice nº 060/2020", "2020",
+  "Call for 1 funding officer position at ICArEHB (UID/ARQ/04211/2019)", "2020",
+  "Call for 1 administrative position at ICArEHB (UID/ARQ/04211/2019). Notice nº 046/2019", "2019",
+  "Call for 1 post-doctoral contract within the project FLAME – Fire among Anatomically Modern Humans and Neanderthals as revealed from Archaeological Microstratigraphic evidence", "2019",
+  "Call for 1 post-doctoral contract within the project The origins and evolution of human cognition and the impact of Southwestern European coastal ecology (ALG-01-0145-FEDER-27833)", "2019"
+) %>%
+  brief_entries(committee, year)
+
+```
+
+\  
+
 
 # Extension and knowledge dissemination
 
@@ -406,16 +448,16 @@ tribble(
 
 tribble(
   ~ student, ~ year,
-  "Nolan Ferar (Ph.D. dissertation, ICArEHB, University of Algarve, Portugal) - Funded by FCT", "2022-",
-  "Mpumi Maringa (Ph.D. dissertation, ICArEHB, University of Algarve, Portugal", "2022-",
-  "Jovan Galfi (Ph.D. dissertation, ICArEHB, University of Algarve, Portugal", "2020-",
-  "Joana Belmiro (Ph.D. dissertation, University of Algarve, Portugal) - Funded by FCT", "2020-",
-  "Daniela Maio (Ph.D. dissertation, University of Algarve, Portugal)", "2019-",
-  "Emily Hallinan (Marie Curie Fellow, ICArEHB, University of Algarve", "2020-2022",
-  "Pedro Horta (Ph.D. dissertation, University of Algarve, Portugal) - Funded by FCT", "2017-2022",
-  "Joana Belmiro (M.A. dissertation, University of Algarve, Portugal)", "2017-2019",
-  "Joana Belmiro (Undergrad. dissertation, University of Algarve, Portugal)", "2017",
-  "Pedro Horta (M.A. dissertation, University of Algarve, Portugal)", "2014-15"
+  "Nolan Ferar (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal) - Funded by FCT", "2022-",
+  "Mpumi Maringa (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal", "2022-",
+  "Jovan Galfi (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal", "2020-",
+  "Joana Belmiro (Ph.D. dissertation, Universidade do Algarve, Portugal) - Funded by FCT", "2020-",
+  "Daniela Maio (Ph.D. dissertation, Universidade do Algarve, Portugal)", "2019-",
+  "Emily Hallinan (Marie Curie Fellow, ICArEHB, Universidade do Algarve", "2020-2022",
+  "Pedro Horta (Ph.D. dissertation, Universidade do Algarve, Portugal) - Funded by FCT", "2017-2022",
+  "Joana Belmiro (M.A. dissertation, Universidade do Algarve, Portugal)", "2017-2019",
+  "Joana Belmiro (Undergrad. dissertation, Universidade do Algarve, Portugal)", "2017",
+  "Pedro Horta (M.A. dissertation, Universidade do Algarve, Portugal)", "2014-15"
 ) %>%
   brief_entries(student, year)
 
@@ -456,12 +498,12 @@ tribble(
 ```{r}
 tribble(
   ~ talk, ~ year,
-  '"European Society for Human Evolution Annual Meeting". University of Algarve, Faro, PT', "2018",
-  '"International Congress The Solutrean". With Isabell Schmidt, Nuno Bicho and Gerd-Christian Weniger. University of Algarve, Faro, PT', "2017",
+  '"European Society for Human Evolution Annual Meeting". Universidade do Algarve, Faro, PT', "2018",
+  '"International Congress The Solutrean". With Isabell Schmidt, Nuno Bicho and Gerd-Christian Weniger. Universidade do Algarve, Faro, PT', "2017",
   '"Symposium Global perspectives on the impact of abrupt climate change in hunter-gatherer-technologies". With Nuno Bicho. SAA 2016, Orlando, USA', "2016",
   'Conference cycle "Arqueologia às 6". Organized by ICArEHB. Faro, PT', "2015-2017",
   '"Symposium Solutrean points: past and present". With Juan Gibaja Bao. At the International Conference El Solutrense. Almería, ES', "2012",
-  '"IV International Conference of Young Researchers in Archaeology (JIA 2011)". University of Algarve, Faro, PT', "2011",
+  '"IV International Conference of Young Researchers in Archaeology (JIA 2011)". Universidade do Algarve, Faro, PT', "2011",
   '"Session Demographic processes and cultural change: archaeological perspectives". III International Conference of Young Researchers in Archaeology (JIA 2010). Barcelona, ES', "2010"
 ) %>%
   brief_entries(talk, year)
@@ -475,14 +517,14 @@ tribble(
 ```{r}
 tribble(
   ~ talk, ~ year,
-  'Workshop "Data Analysis and R Statistics". University of Algarve, Faro, PT', "2016",
+  'Workshop "Data Analysis and R Statistics". Universidade do Algarve, Faro, PT', "2016",
   'Exhibition "The Prehistoric Origins of the Algarve". Organized by ICArEHB and Centro de Ciência Viva do Algarve. Faro, Tavira, Lagos and Vila do Bispo. PT', "2016",
   'Exhibition "At the End of the World 30 thousand years ago: the prehistoric hunter-gatherers of Vale Boi". Organized by ICArEHB. Vila do Bispo, PT', "2014",
-  'Workshop "Total Station in Archaeology". University of Algarve, PT. Promoted by NAP', "2011",
+  'Workshop "Total Station in Archaeology". Universidade do Algarve, PT. Promoted by NAP', "2011",
   'Exhibition "On the margins of the past: the Muge shell middens". Salvaterra de Magos, PT. Organized by NAP', "2011",
-  'Conferences "Arqueologia ao Sul". University of Algarve, Faro, PT. Organized by NAP', "2010-14",
-  'Workshop "Analysis of Lithic Industries" (University of Algarve, Faro, PT. Promoted by NAP', "2010",
-  'Workshop "NESPOS On Tour". University of Algarve, Faro PT. Promoted by NAP', "2010"
+  'Conferences "Arqueologia ao Sul". Universidade do Algarve, Faro, PT. Organized by NAP', "2010-14",
+  'Workshop "Analysis of Lithic Industries" (Universidade do Algarve, Faro, PT. Promoted by NAP', "2010",
+  'Workshop "NESPOS On Tour". Universidade do Algarve, Faro PT. Promoted by NAP', "2010"
 ) %>%
   brief_entries(talk, year)
 ```
@@ -503,13 +545,13 @@ tribble(
 
 # Additional Training
 
-* Workshop *Science and public policy: how to build bridges?*. University of Algarve, Faro, PT.
-* Workshop *Data Analysis and R Statistics*. University of Algarve, Faro, PT.
+* Workshop *Science and public policy: how to build bridges?*. Universidade do Algarve, Faro, PT.
+* Workshop *Data Analysis and R Statistics*. Universidade do Algarve, Faro, PT.
 * Workshop *EVAN Toolbox*. Max Planck Institute for Evolutionary Abthropology, Leipzig, DE.
-* Workshop *NESPOS on Tour*. University of Algarve, Faro, PT.
+* Workshop *NESPOS on Tour*. Universidade do Algarve, Faro, PT.
 * Workshop *Understanding tool use, multidisciplinary perspectives on the cognition and ecology of tool using behaviors*. Max Planck Institute for Evolutionary Anthropology, Leipzig, DE.
 * Workshop *Tools in organic materials: methods of analysis*. CSIC, Barcelona, ES.
-* Workshop *Advanced SPSS applications*. University of Algarve, Faro, PT.
+* Workshop *Advanced SPSS applications*. Universidade do Algarve, Faro, PT.
 * Workshop *Functional studies in non-siliceous rocks*. Lisbon, PT.
 
 \  
