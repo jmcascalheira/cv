@@ -12,7 +12,6 @@ headcolor: "3f51b5"
 github: jmcascalheira
 output: vitae::awesomecv
 docname: Curriculum Vitae
-blogger: www.world.hey.com/jmcascalheira
 ---
 
 ```{r setup, include=FALSE}
@@ -52,11 +51,9 @@ poster <- bibliography_entries("CV.bib") %>%
 
 # Summary
 
-I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [ICArEHB](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at [Universidade do Algarve](www.ualg.pt).
+I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [[*FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia*]{.underline}](www.finisterra.icarehb.com)[. I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [*ICArEHB*](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at [*Universidade do Algarve*](www.ualg.pt).]{.underline}
 
- 
-
-# Education
+# [Education]{.underline}
 
 ```{r education}
 tribble(
@@ -69,9 +66,7 @@ tribble(
   detailed_entries(with = degree, what = details, when = dates, where = uni)
 ```
 
- 
-
-# Employment History
+# [Employment History]{.underline}
 
 ```{r positions}
 
@@ -87,9 +82,7 @@ tribble(
 
 ```
 
- 
-
-# Publications
+# [Publications]{.underline}
 
 ```{r publications, echo = FALSE, include=FALSE}
 
@@ -98,7 +91,7 @@ history <- scholar::get_citation_history("bc9Ul_cAAAAJ")
 pubs <- scholar::get_publications("bc9Ul_cAAAAJ")
 
 # Needs updated file
-cascalheira <- convert2df(file = "../CV/wos_29.01.2024.bib", dbsource = "wos", format = "bibtex")
+cascalheira <- convert2df(file = "../CV/wos_30.08.2024.bib", dbsource = "wos", format = "bibtex")
 
 cascalheira <- cascalheira %>% mutate(AU = replace(AU, AU == "MARREIROS J;BICHO N;GIBAJA J;PEREIRA J", "MARREIROS J;BICHO N;GIBAJA J;PEREIRA J;CASCALHEIRA J"))
 
@@ -106,7 +99,7 @@ wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep 
 
 ```
 
-Citation metrics -- August 2023: **`r scholar$total_cites`** citations \| [*Google Scholar*](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [*Web of Science*](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
+[Citation metrics -- August 2024: **`r scholar$total_cites`** citations \| [*Google Scholar*](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [*Web of Science*](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**]{.underline}
 
 ```{r publicationsgraph, fig.align = 'center', fig.height=2, fig.width=6}
 
@@ -159,9 +152,7 @@ grid.arrange(n_articles, n_citations, nrow = 1)
 
 ```
 
- 
-
-## Books and Edited Volumes
+## [Books and Edited Volumes]{.underline}
 
 ```{r books}
 
@@ -171,9 +162,7 @@ bibliography_entries("CV.bib") %>%
 
 ```
 
- 
-
-## Articles in Peer-Reviewed Journals
+## [Articles in Peer-Reviewed Journals]{.underline}
 
 ```{r peerreview}
 
@@ -183,9 +172,7 @@ bibliography_entries("CV.bib") %>%
 
 ```
 
- 
-
-## Other Articles
+## [Other Articles]{.underline}
 
 ```{r otherpubs}
 
@@ -195,11 +182,9 @@ bibliography_entries("CV.bib") %>%
 
 ```
 
- 
+# [Grants, Awards and Fellowships]{.underline}
 
-# Grants, Awards and Fellowships
-
-Total awarded \~2000,000€
+[Total awarded \~2000,000€]{.underline}
 
 ```{r grants}
 
@@ -222,9 +207,9 @@ tribble(
 
 ```
 
-# Main Research Projects
+# [Main Research Projects]{.underline}
 
-## As Principal Investigator and Co-Investigator
+## [As Principal Investigator and Co-Investigator]{.underline}
 
 ```{r projects}
 
@@ -241,7 +226,7 @@ tribble(
 
 ```
 
-## As Collaborator
+## [As Collaborator]{.underline}
 
 ```{r ascollaborator}
 
@@ -265,11 +250,9 @@ Funded by the Calouste Gulbenkian Foundation", "2013-2015",
 
 ```
 
- 
+# [Conference participation]{.underline}
 
-# Conference participation
-
-## Oral communications
+## [Oral communications]{.underline}
 
 ```{r oral}
 
@@ -279,9 +262,7 @@ bibliography_entries("CV.bib") %>%
 
 ```
 
- 
-
-## Posters
+## [Posters]{.underline}
 
 ```{r posters}
 
@@ -291,11 +272,9 @@ bibliography_entries("CV.bib") %>%
 
 ```
 
- 
+# [Fieldwork]{.underline}
 
-# Fieldwork
-
-## As coordinator
+## [As coordinator]{.underline}
 
 ```{r fieldcoord}
 
@@ -313,9 +292,7 @@ tribble(
 
 ```
 
- 
-
-## As invited specialist
+## [As invited specialist]{.underline}
 
 ```{r fieldinvit}
 
@@ -331,9 +308,7 @@ tribble(
 
 ```
 
- 
-
-## Other fieldwork
+## [Other fieldwork]{.underline}
 
 ```{r fieldother}
 
@@ -348,9 +323,7 @@ tribble(
 
 ```
 
- 
-
-# Teaching
+# [Teaching]{.underline}
 
 ```{r teaching}
 
@@ -369,11 +342,9 @@ tribble(
 
 ```
 
- 
+# [Administrative and management experience]{.underline}
 
-# Administrative and management experience
-
-## Scientific and University management
+## [Scientific and University management]{.underline}
 
 ```{r management}
 
@@ -419,9 +390,7 @@ tribble(
 
 ```
 
- 
-
-## Search committees
+## [Search committees]{.underline}
 
 ```{r committees}
 
@@ -460,11 +429,9 @@ tribble(
 
 ```
 
- 
+# [Extension and knowledge dissemination]{.underline}
 
-# Extension and knowledge dissemination
-
-## Student and Postdoctoral supervision
+## [Student and Postdoctoral supervision]{.underline}
 
 ```{r supervision}
 
@@ -485,9 +452,7 @@ tribble(
 
 ```
 
- 
-
-## Invited seminars
+## [Invited seminars]{.underline}
 
 ```{r seminars}
 
@@ -514,9 +479,7 @@ tribble(
 
 ```
 
- 
-
-## Conferences/Symposia Organized
+## [Conferences/Symposia Organized]{.underline}
 
 ```{r symposia}
 tribble(
@@ -534,9 +497,7 @@ tribble(
 
 ```
 
- 
-
-## Workshops and Exhibitions Organized
+## [Workshops and Exhibitions Organized]{.underline}
 
 ```{r workshops}
 tribble(
@@ -553,9 +514,7 @@ tribble(
   brief_entries(talk, year)
 ```
 
- 
-
-## Tutoring
+## [Tutoring]{.underline}
 
 ```{r tutoring}
 tribble(
@@ -565,53 +524,47 @@ tribble(
   brief_entries(talk, year)
 ```
 
- 
+# [Additional Training]{.underline}
 
-# Additional Training
+-   [Workshop *Introduction to Open Science.* Universidade do Algarve, Faro, PT.]{.underline}
+-   [Workshop *Machine Learning in Archaeology*. Universidade do Algarve, Faro, PT:]{.underline}
+-   [Workshop *Science and public policy: how to build bridges?*. Universidade do Algarve, Faro, PT.]{.underline}
+-   [Workshop *Data Analysis and R Statistics*. Universidade do Algarve, Faro, PT.]{.underline}
+-   [Workshop *EVAN Toolbox*. Max Planck Institute for Evolutionary Abthropology, Leipzig, DE.]{.underline}
+-   [Workshop *NESPOS on Tour*. Universidade do Algarve, Faro, PT.]{.underline}
+-   [Workshop *Understanding tool use, multidisciplinary perspectives on the cognition and ecology of tool using behaviors*. Max Planck Institute for Evolutionary Anthropology, Leipzig, DE.]{.underline}
+-   [Workshop *Tools in organic materials: methods of analysis*. CSIC, Barcelona, ES.]{.underline}
+-   [Workshop *Advanced SPSS applications*. Universidade do Algarve, Faro, PT.]{.underline}
+-   [Workshop *Functional studies in non-siliceous rocks*. Lisbon, PT.]{.underline}
 
--   Workshop *Introduction to Open Science.* Universidade do Algarve, Faro, PT.
--   Workshop *Machine Learning in Archaeology*. Universidade do Algarve, Faro, PT:
--   Workshop *Science and public policy: how to build bridges?*. Universidade do Algarve, Faro, PT.
--   Workshop *Data Analysis and R Statistics*. Universidade do Algarve, Faro, PT.
--   Workshop *EVAN Toolbox*. Max Planck Institute for Evolutionary Abthropology, Leipzig, DE.
--   Workshop *NESPOS on Tour*. Universidade do Algarve, Faro, PT.
--   Workshop *Understanding tool use, multidisciplinary perspectives on the cognition and ecology of tool using behaviors*. Max Planck Institute for Evolutionary Anthropology, Leipzig, DE.
--   Workshop *Tools in organic materials: methods of analysis*. CSIC, Barcelona, ES.
--   Workshop *Advanced SPSS applications*. Universidade do Algarve, Faro, PT.
--   Workshop *Functional studies in non-siliceous rocks*. Lisbon, PT.
+# [Reviewer for academic journals and funding agencies]{.underline}
 
- 
+-   [Fund for Scientific Research -- FNRS Belgium (1)]{.underline}
+-   [Nature Scientific Reports (1)]{.underline}
+-   [PLoS ONE (4)]{.underline}
+-   [Journal of Human Evolution (2)]{.underline}
+-   [Advances in Archaeological Practice (2)]{.underline}
+-   [Journal of Archaeological Science (1)]{.underline}
+-   [Journal of Archaeological Science: Reports (2)]{.underline}
+-   [Quaternary International (1)]{.underline}
+-   [Journal of Paleolithic Archaeology (3)]{.underline}
+-   [African Archaeological Review (1)]{.underline}
+-   [Antiquity (1)]{.underline}
+-   [National Science Centre Poland (1)]{.underline}
+-   [Paleoanthropology Journal (1)]{.underline}
+-   [Journal of Open Archaeology Data (1)]{.underline}
+-   [Journal of Environmental Archaeology (1)]{.underline}
 
-# Reviewer for academic journals and funding agencies
+# [Professional memberships]{.underline}
 
--   Fund for Scientific Research -- FNRS Belgium (1)
--   Nature Scientific Reports (1)
--   PLoS ONE (4)
--   Journal of Human Evolution (2)
--   Advances in Archaeological Practice (2)
--   Journal of Archaeological Science (1)
--   Journal of Archaeological Science: Reports (2)
--   Quaternary International (1)
--   Journal of Paleolithic Archaeology (3)
--   African Archaeological Review (1)
--   Antiquity (1)
--   National Science Centre Poland (1)
--   Paleoanthropology Journal (1)
--   Journal of Open Archaeology Data (1)
--   Journal of Environmental Archaeology (1)
+-   [European Society for the Study of Human Evolution]{.underline}
+-   [Society for American Archaeology]{.underline}
+-   [Paleoanthropology Society]{.underline}
+-   [Archaeological Institute of America]{.underline}
+-   [Seminário Permanente dos Jovens Cientistas do Instituto de Altos Estudos da Academia das Ciências de Lisboa, Membro.]{.underline}
 
- 
+# [Languages]{.underline}
 
-# Professional memberships
-
--   European Society for the Study of Human Evolution
--   Society for American Archaeology
--   Paleoanthropology Society
--   Archaeological Institute of America
--   Seminário Permanente dos Jovens Cientistas do Instituto de Altos Estudos da Academia das Ciências de Lisboa, Membro. 
-
-# Languages
-
--   Portuguese (native)
--   English (proficient)
--   Spanish (conversational)
+-   [Portuguese (native)]{.underline}
+-   [English (proficient)]{.underline}
+-   [Spanish (conversational)]{.underline}
