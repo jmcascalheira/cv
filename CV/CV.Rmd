@@ -12,11 +12,13 @@ headcolor: "3f51b5"
 github: jmcascalheira
 output: vitae::awesomecv
 docname: Curriculum Vitae
+blogger: www.world.hey.com/jmcascalheira
 ---
 
 ```{r setup, include=FALSE}
 
 options(encoding = "UTF-8")
+options(tinytex.verbose = TRUE)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 library(vitae)
@@ -56,9 +58,10 @@ I am an archaeologist interested in prehistoric hunter-gatherer adaptations, spe
 
 # Education
 
-```{r}
+```{r education}
 tribble(
   ~ degree, ~ uni, ~ dates, ~ details,
+  "Agregação in Archaeology", "Universidade do Algarve, Portugal", "2024","",
   "Ph.D. in Archaeology", "Universidade do Algarve, Portugal", "2013", "Thesis: The mediterranean influence on the social networks of the Iberian Solutrean",
   "MA in Archaeology", "Universidade do Algarve, Portugal", "2009", "Final classification: 19 out of 20. Thesis: Solutrean lithic technology from the Vale Boi rockshelter",
   "Licenciatura in Cultural Heritage", "Universidade do Algarve, Portugal", "2007", "Final classification: 16 out of 20"
@@ -95,7 +98,7 @@ history <- scholar::get_citation_history("bc9Ul_cAAAAJ")
 pubs <- scholar::get_publications("bc9Ul_cAAAAJ")
 
 # Needs updated file
-cascalheira <- convert2df(file = "../CV/WOS.bib", dbsource = "wos", format = "bibtex")
+cascalheira <- convert2df(file = "../CV/wos_29.01.2024.bib", dbsource = "wos", format = "bibtex")
 
 cascalheira <- cascalheira %>% mutate(AU = replace(AU, AU == "MARREIROS J;BICHO N;GIBAJA J;PEREIRA J", "MARREIROS J;BICHO N;GIBAJA J;PEREIRA J;CASCALHEIRA J"))
 
@@ -148,7 +151,7 @@ n_articles <- ggplot(pubs, aes(year, N)) +
 #              method = "lm", se= FALSE, color = "firebrick1", size = 2) +
   labs(title = "", subtitle = "New publications per year") +
   scale_x_discrete(breaks = pubs$year,labels = everysecond(pubs$year), limits = pubs$year) +
-  scale_y_continuous(limits = c(0, 12), breaks = c(0, 6, 12, 18)) +
+  scale_y_continuous(limits = c(0, 18), breaks = c(0, 6, 12, 18)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1), text=element_text(size=13), axis.ticks = element_blank()) +
   xlab("")
 
@@ -160,7 +163,7 @@ grid.arrange(n_articles, n_citations, nrow = 1)
 
 ## Books and Edited Volumes
 
-```{r}
+```{r books}
 
 bibliography_entries("CV.bib") %>% 
   filter(type == "book") %>% 
@@ -172,7 +175,7 @@ bibliography_entries("CV.bib") %>%
 
 ## Articles in Peer-Reviewed Journals
 
-```{r}
+```{r peerreview}
 
 bibliography_entries("CV.bib") %>%
   filter(type == "article-journal" & !is.na(DOI)) %>% 
@@ -184,7 +187,7 @@ bibliography_entries("CV.bib") %>%
 
 ## Other Articles
 
-```{r}
+```{r otherpubs}
 
 bibliography_entries("CV.bib") %>% 
   filter(!type %in% c("book","thesis","speech") & is.na(DOI)) %>%
@@ -198,7 +201,7 @@ bibliography_entries("CV.bib") %>%
 
 Total awarded \~2000,000€
 
-```{r}
+```{r grants}
 
 tribble(
   ~ project, ~ amount, ~ year,
@@ -223,7 +226,7 @@ tribble(
 
 ## As Principal Investigator and Co-Investigator
 
-```{r}
+```{r projects}
 
 tribble(
   ~ project, ~ year,
@@ -240,7 +243,7 @@ tribble(
 
 ## As Collaborator
 
-```{r}
+```{r ascollaborator}
 
 tribble(
   ~ project, ~ year,
@@ -268,7 +271,7 @@ Funded by the Calouste Gulbenkian Foundation", "2013-2015",
 
 ## Oral communications
 
-```{r}
+```{r oral}
 
 bibliography_entries("CV.bib") %>% 
   filter(type == "speech" & `title-short` == "Talk") %>% 
@@ -280,7 +283,7 @@ bibliography_entries("CV.bib") %>%
 
 ## Posters
 
-```{r}
+```{r posters}
 
 bibliography_entries("CV.bib") %>% 
   filter(type == "speech" & `title-short` == "Poster") %>% 
@@ -294,7 +297,7 @@ bibliography_entries("CV.bib") %>%
 
 ## As coordinator
 
-```{r}
+```{r fieldcoord}
 
 tribble(
   ~ project, ~ year,
@@ -314,7 +317,7 @@ tribble(
 
 ## As invited specialist
 
-```{r}
+```{r fieldinvit}
 
 tribble(
   ~ project, ~ year,
@@ -332,7 +335,7 @@ tribble(
 
 ## Other fieldwork
 
-```{r}
+```{r fieldother}
 
 tribble(
   ~ project, ~ year,
@@ -463,7 +466,7 @@ tribble(
 
 ## Student and Postdoctoral supervision
 
-```{r}
+```{r supervision}
 
 tribble(
   ~ student, ~ year,
@@ -486,10 +489,11 @@ tribble(
 
 ## Invited seminars
 
-```{r}
+```{r seminars}
 
 tribble(
   ~ talk, ~ year,
+  '"The Upper Paleolithic occupations at Vale Boi (Vila do Bispo, Algarve)". Associação Arqueológica do Algarve, São Brás de Alportel/Lagoa', "2024",
   '"40 mil anos depois: o que sabemos sobre o desaparecimento dos Neandertais". Academia das Ciências de Lisboa, Lisbon', "2023",
   '"O que sabemos sobre o desaparecimento dos Neandertais?". FI.CA, Lisbon', "2022",
   '"Human adaptations to the Last Glacial Maximum in the Iberian Peninsula". Hebrew University MA seminar series "The social dimensions of human adaptation to extreme environments", Online', "2021",
@@ -514,9 +518,10 @@ tribble(
 
 ## Conferences/Symposia Organized
 
-```{r}
+```{r symposia}
 tribble(
   ~ talk, ~ year,
+  '"Symposium Expedient Technological Behavior: Global Perspectives and Future Directions". With Nolan Ferar. SAA 2024, New Orleans, USA', "2024",
   '"European Society for Human Evolution Annual Meeting". Universidade do Algarve, Faro, PT', "2018",
   '"International Congress The Solutrean". With Isabell Schmidt, Nuno Bicho and Gerd-Christian Weniger. Universidade do Algarve, Faro, PT', "2017",
   '"Symposium Global perspectives on the impact of abrupt climate change in hunter-gatherer-technologies". With Nuno Bicho. SAA 2016, Orlando, USA', "2016",
@@ -533,7 +538,7 @@ tribble(
 
 ## Workshops and Exhibitions Organized
 
-```{r}
+```{r workshops}
 tribble(
   ~ talk, ~ year,
   'Workshop "Data Analysis and R Statistics". Universidade do Algarve, Faro, PT', "2016",
@@ -552,7 +557,7 @@ tribble(
 
 ## Tutoring
 
-```{r}
+```{r tutoring}
 tribble(
   ~ talk, ~ year,
   'Instructor of Statistics in Archaeology using R in one the Training in Frontier Archaeology ICArEHB actions', "2022",
@@ -564,6 +569,8 @@ tribble(
 
 # Additional Training
 
+-   Workshop *Introduction to Open Science.* Universidade do Algarve, Faro, PT.
+-   Workshop *Machine Learning in Archaeology*. Universidade do Algarve, Faro, PT:
 -   Workshop *Science and public policy: how to build bridges?*. Universidade do Algarve, Faro, PT.
 -   Workshop *Data Analysis and R Statistics*. Universidade do Algarve, Faro, PT.
 -   Workshop *EVAN Toolbox*. Max Planck Institute for Evolutionary Abthropology, Leipzig, DE.
@@ -591,6 +598,7 @@ tribble(
 -   National Science Centre Poland (1)
 -   Paleoanthropology Journal (1)
 -   Journal of Open Archaeology Data (1)
+-   Journal of Environmental Archaeology (1)
 
  
 
@@ -600,15 +608,7 @@ tribble(
 -   Society for American Archaeology
 -   Paleoanthropology Society
 -   Archaeological Institute of America
--   Seminário Permanente dos Jovens Cientistas do Instituto de Altos Estudos da Academia das Ciências de Lisboa, Membro.
-
- 
-
-# Editorial boards
-
--   Cambridge Scholars Publishing -- Archaeology Advisory Board
-
- 
+-   Seminário Permanente dos Jovens Cientistas do Instituto de Altos Estudos da Academia das Ciências de Lisboa, Membro. 
 
 # Languages
 
