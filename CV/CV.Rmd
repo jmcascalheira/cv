@@ -52,7 +52,7 @@ poster <- bibliography_entries("CV.bib") %>%
 
 # Summary
 
-I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [ICArEHB](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at [Universidade do Algarve](www.ualg.pt).
+I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [*FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia*](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [*ICArEHB*](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at [*Universidade do Algarve*](www.ualg.pt).
 
 # Education
 
@@ -100,7 +100,7 @@ wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep 
 
 ```
 
-Citation metrics -- August 2024: **`r scholar$total_cites`** citations \| [*Google Scholar*](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [*Web of Science*](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
+Citation metrics -- August 2024: **`r scholar$total_cites`** citations \| [Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [Web of Science](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
 
 ```{r publicationsgraph, fig.align = 'center', fig.height=2, fig.width=6}
 
@@ -527,16 +527,16 @@ tribble(
 
 # Additional Training
 
--   Workshop *Introduction to Open Science.* Universidade do Algarve, Faro, PT.
--   Workshop *Machine Learning in Archaeology*. Universidade do Algarve, Faro, PT:
--   Workshop *Science and public policy: how to build bridges?*. Universidade do Algarve, Faro, PT.
--   Workshop *Data Analysis and R Statistics*. Universidade do Algarve, Faro, PT.
--   Workshop *EVAN Toolbox*. Max Planck Institute for Evolutionary Abthropology, Leipzig, DE.
--   Workshop *NESPOS on Tour*. Universidade do Algarve, Faro, PT.
--   Workshop *Understanding tool use, multidisciplinary perspectives on the cognition and ecology of tool using behaviors*. Max Planck Institute for Evolutionary Anthropology, Leipzig, DE.
--   Workshop *Tools in organic materials: methods of analysis*. CSIC, Barcelona, ES.
--   Workshop *Advanced SPSS applications*. Universidade do Algarve, Faro, PT.
--   Workshop *Functional studies in non-siliceous rocks*. Lisbon, PT.
+-   Workshop Introduction to Open Science. Universidade do Algarve, Faro, PT.
+-   Workshop Machine Learning in Archaeology. Universidade do Algarve, Faro, PT:
+-   Workshop Science and public policy: how to build bridges?. Universidade do Algarve, Faro, PT.
+-   Workshop Data Analysis and R Statistics. Universidade do Algarve, Faro, PT.
+-   Workshop EVAN Toolbox. Max Planck Institute for Evolutionary Abthropology, Leipzig, DE.
+-   Workshop NESPOS on Tour. Universidade do Algarve, Faro, PT.
+-   Workshop Understanding tool use, multidisciplinary perspectives on the cognition and ecology of tool using behaviors. Max Planck Institute for Evolutionary Anthropology, Leipzig, DE.
+-   Workshop Tools in organic materials: methods of analysis. CSIC, Barcelona, ES.
+-   Workshop Advanced SPSS applications. Universidade do Algarve, Faro, PT.
+-   Workshop Functional studies in non-siliceous rocks. Lisbon, PT.
 
 # Reviewer for academic journals and funding agencies
 
