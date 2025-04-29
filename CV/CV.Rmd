@@ -34,18 +34,18 @@ peer_artic <- bibliography_entries("CV.bib") %>%
   dplyr::arrange(!is.na(issued), desc(issued))
 
 n_artic <- bibliography_entries("CV.bib") %>% 
-  filter(!type %in% c("book", "thesis", "speech") & is.na(DOI)) %>%
+  dplyr::filter(!type %in% c("book", "thesis", "speech") & is.na(DOI)) %>%
   dplyr::arrange(!is.na(issued), desc(issued))
 
 total_artic <- bibliography_entries("CV.bib") %>% 
-  filter(!type %in% c("book", "thesis", "speech"))
+  dplyr::filter(!type %in% c("book", "thesis", "speech"))
 
 oral <- bibliography_entries("CV.bib") %>% 
-  filter(type == "speech" & `title-short` == "Talk") %>% 
+  dplyr::filter(`title-short` == "Talk") %>% 
   arrange(!is.na(issued), desc(issued))
 
 poster <- bibliography_entries("CV.bib") %>% 
-  filter(type == "speech" & `title-short` == "Poster") %>% 
+  dplyr::filter(`title-short` == "Poster") %>% 
   arrange(!is.na(issued), desc(issued))
 
 ```
@@ -63,7 +63,7 @@ tribble(
   "Ph.D. in Archaeology", "Universidade do Algarve, Portugal", "2013", "Thesis: The mediterranean influence on the social networks of the Iberian Solutrean",
   "MA in Archaeology", "Universidade do Algarve, Portugal", "2009", "Final classification: 19 out of 20. Thesis: Solutrean lithic technology from the Vale Boi rockshelter",
   "Licenciatura in Cultural Heritage", "Universidade do Algarve, Portugal", "2007", "Final classification: 16 out of 20"
-) %>% 
+) %>%
   detailed_entries(with = degree, what = details, when = dates, where = uni)
 ```
 
@@ -92,7 +92,7 @@ history <- scholar::get_citation_history("bc9Ul_cAAAAJ")
 pubs <- scholar::get_publications("bc9Ul_cAAAAJ")
 
 # Needs updated file
-cascalheira <- convert2df(file = "../CV/wos_30.08.2024.bib", dbsource = "wos", format = "bibtex")
+cascalheira <- convert2df(file = "../CV/wos_29.04.2025.bib", dbsource = "wos", format = "bibtex")
 
 cascalheira <- cascalheira %>% mutate(AU = replace(AU, AU == "MARREIROS J;BICHO N;GIBAJA J;PEREIRA J", "MARREIROS J;BICHO N;GIBAJA J;PEREIRA J;CASCALHEIRA J"))
 
@@ -145,7 +145,7 @@ n_articles <- ggplot(pubs, aes(year, N)) +
 #              method = "lm", se= FALSE, color = "firebrick1", size = 2) +
   labs(title = "", subtitle = "New publications per year") +
   scale_x_discrete(breaks = pubs$year,labels = everysecond(pubs$year), limits = pubs$year) +
-  scale_y_continuous(limits = c(0, 18), breaks = c(0, 6, 12, 18)) +
+#  scale_y_continuous(limits = c(0, 18), breaks = c(0, 6, 12, 18)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1), text=element_text(size=13), axis.ticks = element_blank()) +
   xlab("")
 
@@ -179,6 +179,16 @@ bibliography_entries("CV.bib") %>%
 
 bibliography_entries("CV.bib") %>% 
   filter(!type %in% c("book","thesis","speech") & is.na(DOI)) %>%
+  arrange(!is.na(issued), desc(issued))
+
+```
+
+## Software and Datasets
+
+```{r datasets}
+
+bibliography_entries("CV.bib") %>% 
+  filter(type == "dataset") %>%
   arrange(!is.na(issued), desc(issued))
 
 ```
@@ -351,6 +361,11 @@ tribble(
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
+  "Elected member", "Universidade do Algarve, Portugal", "2024-", "UAlg's General Council") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
   "Director", "ICArEHB - Universidade do Algarve, Portugal", "2023-", "Interdisciplinary Center for Archaeology and the Evolution of Human Behaviour") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
@@ -397,7 +412,10 @@ tribble(
 
 tribble(
   ~ committee, ~ year,
-  "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in climate modeling, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 046/2023", "2023",
+   "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in spatial analysis, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 009/2025", "2025",
+  "Call for 1 Junior Researcher in Archaeology, expertise in agent-based modeling, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 21369/2024/2", "2024",
+   "Call for 1 Assistant Researcher in Archaeology at ICArEHB, through CEEC institutional program", "2024",
+   "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in climate modeling, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 046/2023", "2023",
   "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in geoarchaeology, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 037/2023", "2023",
   "Call for 1 MA Fellowship (BI) in Archaeology at ICArEHB. Notice nº 001/2023", "2023",
   "Call for 3 PhD Fellowships (BI) in Archaeology, expertise in isotopes, phytoliths, computational modeling, within DISPERSALS: Dispersals, resilience, and innovation in Late Pleistocene SE Africa, ERC-2021-ADG. Notice nº 039/2023", "2023",
@@ -459,6 +477,7 @@ tribble(
 
 tribble(
   ~ talk, ~ year,
+  '"The Far West: Recent Advances in the Study of Late Pleistocene Adaptations in southwesternmost Iberia". 66th Conference of the Hugo Obermaier Society, Faro', "2025",
   '"The Upper Paleolithic occupations at Vale Boi (Vila do Bispo, Algarve)". Associação Arqueológica do Algarve, São Brás de Alportel/Lagoa', "2024",
   '"40 mil anos depois: o que sabemos sobre o desaparecimento dos Neandertais". Academia das Ciências de Lisboa, Lisbon', "2023",
   '"O que sabemos sobre o desaparecimento dos Neandertais?". FI.CA, Lisbon', "2022",
@@ -544,7 +563,7 @@ tribble(
 -   Nature Scientific Reports (1)
 -   PLoS ONE (4)
 -   Journal of Human Evolution (2)
--   Advances in Archaeological Practice (2)
+-   Advances in Archaeological Practice (3)
 -   Journal of Archaeological Science (1)
 -   Journal of Archaeological Science: Reports (2)
 -   Quaternary International (1)
