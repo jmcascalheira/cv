@@ -2,7 +2,7 @@
 name: João Cascalheira
 date: "`r format(Sys.time(), '%B %Y')`"
 qualifications: Ph.D.
-position: "Researcher"
+position: "Coordinating Researcher"
 pronouns: he/his
 address: "ICArEHB, Universidade do Algarve, Campus de Gambelas, 8005-139 Faro, Portugal"
 phone: +351 912 468 699
@@ -73,7 +73,12 @@ tribble(
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
-  "Assistant Researcher", "Universidade do Algarve, Portugal", "2019-Present", "Position funded by Fundação para a Ciência e a Tecnologia") %>%
+  "Coordinating Researcher", "Universidade do Algarve, Portugal", "2025-Present", "") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
+  "Assistant Researcher", "Universidade do Algarve, Portugal", "2019-2024", "Position funded by Fundação para a Ciência e a Tecnologia") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
 tribble(
@@ -100,7 +105,7 @@ wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep 
 
 ```
 
-Citation metrics -- August 2024: **`r scholar$total_cites`** citations \| [Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [Web of Science](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
+Citation metrics -- April 2025: **`r scholar$total_cites`** citations \| [Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [Web of Science](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
 
 ```{r publicationsgraph, fig.align = 'center', fig.height=2, fig.width=6}
 
