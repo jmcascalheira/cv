@@ -52,7 +52,7 @@ poster <- bibliography_entries("CV.bib") %>%
 
 # Summary
 
-I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [*FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia*](www.finisterra.icarehb.com). I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [*ICArEHB*](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at [*Universidade do Algarve*](www.ualg.pt).
+I am an archaeologist interested in prehistoric hunter-gatherer adaptations, specifically in how these are related to processes of climate and environmental change. I focus on the study of lithic technological organization and its correlation with various aspects of ecological dynamics and human behavior. I currently direct fieldwork in several sites within the context of my ERC Consolidator Grant - [*FINISTERRA: Population trajectories and cultural dynamics of the late Neanderthals in Far Western Eurasia*](www.finisterra.icarehb.com). From 2027, I am the Principal Investigator of *UAlgTec Heritage (UTH)*, a €31.5 million project funded by the European Commission under Horizon Europe Teaming for Excellence. I am also a collaborator in different projects on the Middle and Later Stone Age in Mozambique and Sudan. My publication record counts with 5 books/edited volumes, `r nrow(peer_artic)` publications in peer-review journals, and `r nrow(n_artic)` other publications as first author or in collaboration. I also have `r sum(nrow(oral), nrow(poster))` public presentations in international professional conferences. Currently, I am the Director of [*ICArEHB*](www.icarehb.com), a research center for archaeology and the evolution of human behaviour at [*Universidade do Algarve*](www.ualg.pt).
 
 # Education
 
@@ -208,12 +208,13 @@ bibliography_entries("CV.bib") %>%
 
 # Grants, Awards and Fellowships
 
-Total awarded \~2000,000€
+Total awarded \~33,900,000€ (including the UTH total consortium budget)
 
 ```{r grants}
 
 tribble(
   ~ project, ~ amount, ~ year,
+  "UAlgTec Heritage (UTH). Funded by the European Commission, Horizon Europe Teaming for Excellence. Total consortium budget", "31,500,000€", "2027-",
   "FINISTERRA - Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia. Funded by European Research Council Consolidator Grant", "1.899,696€", "2022-",
   "Neanderthals and Early Modern Humans in the Escoural Cave (southern Portugal). Funded by Wenner-Gren Foundation", "18,000€", "2020-",
   "The origins and evolution of human cognition and the impact of Southwestern European coastal ecology. Funded by Fundação para a Ciência e Tecnologia", "240,000€", "2018-",
@@ -239,6 +240,7 @@ tribble(
 
 tribble(
   ~ project, ~ year,
+  "UAlgTec Heritage (UTH). Funded by the European Commission, Horizon Europe Teaming for Excellence","2027-",
   "FINISTERRA - Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia. Funded by European Research Council Consolidator Grant","2022-",
   "Neanderthals and Early Modern Humans in the Escoural Cave (southern Portugal). Funded by the Wenner-Gren Foundation", "2020-",
   "The origins and evolution of human cognition and the impact of Southwestern European coastal ecology. Co-PI with Nuno Bicho. Funded by Fundação para a Ciência e Tecnologia - ALG-01-0145-FEDER-27833", "2018-",
