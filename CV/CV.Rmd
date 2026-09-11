@@ -492,6 +492,7 @@ tribble(
 
 tribble(
   ~ talk, ~ year,
+  '"FINISTERRA: New Insights into Southwestern Iberia’s Late Pleistocene Record". HEAS Seminar Series, University of Vienna, Vienna, AT', "2026",
   '"The Far West: Recent Advances in the Study of Late Pleistocene Adaptations in southwesternmost Iberia". 66th Conference of the Hugo Obermaier Society, Faro', "2025",
   '"The Upper Paleolithic occupations at Vale Boi (Vila do Bispo, Algarve)". Associação Arqueológica do Algarve, São Brás de Alportel/Lagoa', "2024",
   '"40 mil anos depois: o que sabemos sobre o desaparecimento dos Neandertais". Academia das Ciências de Lisboa, Lisbon', "2023",
@@ -509,6 +510,18 @@ tribble(
   '"Stone Age archaeology in the Niassa region, Mozambique. Preliminary results from the 2014 campaign". Geographical Society of Lisbon, Lisbon, PT (with N. Bicho, J. Haws, O. Madime, C. Gonçalves, V. Aldeias, and M. Benedetti)', "2014",
   '"Human responses to environmental change: the case of the Portuguese Upper Paleolithic". National Museum of Archaeology, Lisbon, PT', "2014",
   '"The mediterranean influence on the social networks of the Solutrean in Iberia". National Museum of Archaeology, Lisbon, PT', "2014"
+) %>%
+  brief_entries(talk, year)
+
+```
+
+## Invited participation in workshops and panels
+
+```{r panels}
+tribble(
+  ~ talk, ~ year,
+  'Roundtable participant. Stakeholder Meeting of COST Action CA23141 - Managing Artificial Intelligence in Archaeology (MAIA). FCSH NOVA, Lisbon, PT', "2026",
+  'Roundtable participant. 4º Fórum Cultura, Tavira, PT', "2026"
 ) %>%
   brief_entries(talk, year)
 
