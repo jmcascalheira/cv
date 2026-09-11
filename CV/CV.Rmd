@@ -107,7 +107,7 @@ wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep 
 
 Citation metrics -- September 2026: **`r scholar$total_cites`** citations \| [Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [Web of Science](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
 
-```{r publicationsgraph, fig.align = 'center', fig.height=1.75, fig.width=6}
+```{r publicationsgraph, fig.align = 'center', fig.height=1.75, fig.width=6, dev='cairo_pdf'}
 
 everysecond <- function(x){
   x <- sort(unique(x))
