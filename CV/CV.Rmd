@@ -208,7 +208,7 @@ bibliography_entries("CV.bib") %>%
 
 # Grants, Awards and Fellowships
 
-Total awarded \~33,900,000€ (including the UTH total consortium budget)
+Total awarded \~33,900,000€
 
 ```{r grants}
 
