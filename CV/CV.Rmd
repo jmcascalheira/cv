@@ -135,8 +135,16 @@ total_artic <- as.data.frame(
 )
 
 
+# Pull the year out of each entry individually. `issued` is a list of csl_date
+# objects, and an entry with a full date (YYYY-MM-DD) contributes three
+# date-parts instead of one, so unlist() would misalign the column and error.
+year_of <- function(x) {
+  dp <- tryCatch(x[["date-parts"]][[1]][[1]], error = function(e) NULL)
+  if (is.null(dp) || length(dp) == 0) NA_character_ else as.character(dp)
+}
+
 pubs <- total_artic %>%
-  mutate(issued = as.character(unlist(issued))) %>% 
+  mutate(issued = vapply(issued, year_of, character(1))) %>% 
 #  filter(issued != "2023") %>% 
   drop_na(issued) %>% 
   group_by(issued) %>%  
