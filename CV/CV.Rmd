@@ -107,7 +107,7 @@ wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep 
 
 Citation metrics -- September 2026: **`r scholar$total_cites`** citations \| [Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [Web of Science](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
 
-```{r publicationsgraph, fig.align = 'center', fig.height=2, fig.width=6}
+```{r publicationsgraph, fig.align = 'center', fig.height=1.75, fig.width=6}
 
 everysecond <- function(x){
   x <- sort(unique(x))
@@ -460,6 +460,19 @@ tribble(
   "Call for 1 post-doctoral contract within the project The origins and evolution of human cognition and the impact of Southwestern European coastal ecology (ALG-01-0145-FEDER-27833)", "2019"
 ) %>%
   brief_entries(committee, year)
+
+```
+
+## Research evaluation panels
+
+```{r evalpanels}
+
+tribble(
+  ~ panel, ~ year,
+  "Member of the International Panel of Evaluators (MEP), assessment of the university's research quality. University of West Bohemia (ZČU), Czech Republic", "2025",
+  "Member of the Social Sciences, Humanities and Arts evaluation panel. Concurso de Estímulo à Investigação para Doutoramentos na Administração Pública (Doutor-AP), 1st edition. Fundação para a Ciência e a Tecnologia, Portugal", "2025"
+) %>%
+  brief_entries(panel, year)
 
 ```
 
