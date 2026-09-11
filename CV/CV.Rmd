@@ -97,7 +97,7 @@ history <- scholar::get_citation_history("bc9Ul_cAAAAJ")
 pubs <- scholar::get_publications("bc9Ul_cAAAAJ")
 
 # Needs updated file
-cascalheira <- convert2df(file = "../CV/wos_29.04.2025.bib", dbsource = "wos", format = "bibtex")
+cascalheira <- convert2df(file = "wos_11.09.2026.bib", dbsource = "wos", format = "bibtex")
 
 cascalheira <- cascalheira %>% mutate(AU = replace(AU, AU == "MARREIROS J;BICHO N;GIBAJA J;PEREIRA J", "MARREIROS J;BICHO N;GIBAJA J;PEREIRA J;CASCALHEIRA J"))
 
@@ -105,7 +105,7 @@ wos <- Hindex(cascalheira, field = "author", elements = c("CASCALHEIRA J"), sep 
 
 ```
 
-Citation metrics -- April 2025: **`r scholar$total_cites`** citations \| [Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [Web of Science](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
+Citation metrics -- September 2026: **`r scholar$total_cites`** citations \| [Google Scholar](https://scholar.google.pt/citations?user=bc9Ul_cAAAAJ) H-index: **`r scholar$h_index`** \| [Web of Science](%22https://publons.com/researcher/1736137/joao-cascalheira/%22) H-index: **`r wos$h_index`**
 
 ```{r publicationsgraph, fig.align = 'center', fig.height=2, fig.width=6}
 
