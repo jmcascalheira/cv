@@ -491,6 +491,7 @@ tribble(
 tribble(
   ~ student, ~ year,
   "Guillermo Alzate-Casallas (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2023-",
+  "İnci Özdoğru (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2023-",
   "Nolan Ferar (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal) - Funded by FCT", "2022-",
   "Mpumi Maringa (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal", "2022-",
   "Jovan Galfi (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal", "2020-",
