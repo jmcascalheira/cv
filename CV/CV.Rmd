@@ -376,6 +376,11 @@ tribble(
 
 tribble(
  ~ role, ~ company, ~ dates, ~ topic,
+  "Elected member", "Universidade do Algarve, Portugal", "2026-", "Assembleia Estatutária") %>%
+  detailed_entries(with = role, when = dates, where = company, what = topic)
+
+tribble(
+ ~ role, ~ company, ~ dates, ~ topic,
   "Elected member", "Universidade do Algarve, Portugal", "2024-", "UAlg's General Council") %>%
   detailed_entries(with = role, when = dates, where = company, what = topic)
 
@@ -427,6 +432,7 @@ tribble(
 
 tribble(
   ~ committee, ~ year,
+   "Call for 1 MA Fellowship (BI) in Archaeology, expertise in spatial analysis using Geographic Information Systems, within ICArEHB (UID/04211/2025). Notice nº 96/2026", "2026",
    "Call for 1 PhD Fellowship (BI) in Archaeology, expertise in spatial analysis, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 009/2025", "2025",
   "Call for 1 Junior Researcher in Archaeology, expertise in agent-based modeling, within FINISTERRA: Population trajectories and cultural dynamics of Late Neanderthals in Far Western Eurasia (101045506-FINISTERRA-ERC-2021-COG). Notice nº 21369/2024/2", "2024",
    "Call for 1 Assistant Researcher in Archaeology at ICArEHB, through CEEC institutional program", "2024",
@@ -484,10 +490,11 @@ tribble(
 
 tribble(
   ~ student, ~ year,
+  "Guillermo Alzate-Casallas (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2023-",
   "Nolan Ferar (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal) - Funded by FCT", "2022-",
   "Mpumi Maringa (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal", "2022-",
   "Jovan Galfi (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal", "2020-",
-  "Joana Belmiro (Ph.D. dissertation, Universidade do Algarve, Portugal) - Funded by FCT", "2020-",
+  "Joana Belmiro (Ph.D. dissertation, Universidade do Algarve, Portugal) - Funded by FCT", "2020-2025",
   "Daniela Maio (Ph.D. dissertation, Universidade do Algarve, Portugal)", "2019-",
   "Emily Hallinan (Marie Curie Fellow, ICArEHB, Universidade do Algarve", "2020-2022",
   "Pedro Horta (Ph.D. dissertation, Universidade do Algarve, Portugal) - Funded by FCT", "2017-2022",
@@ -615,6 +622,7 @@ tribble(
 -   Paleoanthropology Journal (1)
 -   Journal of Open Archaeology Data (1)
 -   Journal of Environmental Archaeology (1)
+-   Climate of the Past (1)
 
 # Professional memberships
 
