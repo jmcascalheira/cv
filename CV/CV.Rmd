@@ -490,6 +490,7 @@ tribble(
 
 tribble(
   ~ student, ~ year,
+  "Lucía Cobo-Sánchez (Marie Curie Fellow, ICArEHB, Universidade do Algarve, Portugal)", "2024-",
   "Guillermo Alzate-Casallas (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2023-",
   "İnci Özdoğru (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2023-",
   "Nolan Ferar (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal) - Funded by FCT", "2022-",
