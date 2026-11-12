@@ -494,11 +494,11 @@ tribble(
   "Guillermo Alzate-Casallas (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2023-",
   "İnci Özdoğru (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2023-",
   "Nolan Ferar (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal) - Funded by FCT", "2022-",
-  "Mpumi Maringa (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal", "2022-",
-  "Jovan Galfi (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal", "2020-",
+  "Mpumi Maringa (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2022-",
+  "Jovan Galfi (Ph.D. dissertation, ICArEHB, Universidade do Algarve, Portugal)", "2020-",
   "Joana Belmiro (Ph.D. dissertation, Universidade do Algarve, Portugal) - Funded by FCT", "2020-2025",
   "Daniela Maio (Ph.D. dissertation, Universidade do Algarve, Portugal)", "2019-",
-  "Emily Hallinan (Marie Curie Fellow, ICArEHB, Universidade do Algarve", "2020-2022",
+  "Emily Hallinan (Marie Curie Fellow, ICArEHB, Universidade do Algarve)", "2020-2022",
   "Pedro Horta (Ph.D. dissertation, Universidade do Algarve, Portugal) - Funded by FCT", "2017-2022",
   "Joana Belmiro (M.A. dissertation, Universidade do Algarve, Portugal)", "2017-2019",
   "Joana Belmiro (Undergrad. dissertation, Universidade do Algarve, Portugal)", "2017",
@@ -578,7 +578,7 @@ tribble(
   'Workshop "Total Station in Archaeology". Universidade do Algarve, PT. Promoted by NAP', "2011",
   'Exhibition "On the margins of the past: the Muge shell middens". Salvaterra de Magos, PT. Organized by NAP', "2011",
   'Conferences "Arqueologia ao Sul". Universidade do Algarve, Faro, PT. Organized by NAP', "2010-14",
-  'Workshop "Analysis of Lithic Industries" (Universidade do Algarve, Faro, PT. Promoted by NAP', "2010",
+  'Workshop "Analysis of Lithic Industries". Universidade do Algarve, Faro, PT. Promoted by NAP', "2010",
   'Workshop "NESPOS On Tour". Universidade do Algarve, Faro PT. Promoted by NAP', "2010"
 ) %>%
   brief_entries(talk, year)
